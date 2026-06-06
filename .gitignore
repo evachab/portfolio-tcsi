@@ -3,3 +3,5 @@ node_modules/
 .vercel/
 *.env
 .env.local
+# PDFs stats (données privées — ne pas publier)
+*.pdf

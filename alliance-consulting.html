@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alliance Consulting — Projet Web · Eva Chabert</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rose: #F72585; --orange: #F4802A; --jaune: #F9C531; --cyan: #4CC9F0;
+  --dark: #1A0A0F; --white: #FFFAF8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--dark); overflow-x: hidden; }
+
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2.5rem; background: rgba(255,250,248,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(247,37,133,0.15); }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 900; background: linear-gradient(135deg, var(--rose), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 2px; text-decoration: none; }
+.nav-right { display: flex; gap: 8px; align-items: center; }
+.nav-btn { text-decoration: none; font-size: 12px; font-weight: 500; color: var(--dark); padding: 6px 14px; border-radius: 20px; transition: all 0.2s; border: 1.5px solid transparent; }
+.nav-btn:hover { background: var(--rose); color: white; }
+.nav-btn-primary { background: linear-gradient(135deg, var(--rose), var(--orange)); color: white !important; }
+.nav-btn-primary:hover { opacity: 0.85; }
+
+.hero { min-height: 80vh; padding: 9rem 2rem 4rem; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 30% 40%, rgba(247,37,133,0.1) 0%, transparent 60%), radial-gradient(ellipse 50% 50% at 80% 60%, rgba(244,128,42,0.08) 0%, transparent 60%); }
+.hero-content { position: relative; z-index: 1; max-width: 800px; }
+.hero-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rose); background: rgba(247,37,133,0.1); padding: 6px 18px; border-radius: 20px; margin-bottom: 1.5rem; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(42px, 8vw, 90px); font-weight: 900; background: linear-gradient(135deg, var(--rose), var(--orange), var(--jaune)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; margin-bottom: 0.75rem; letter-spacing: 0.02em; }
+.hero-sub { font-family: 'Playfair Display', serif; font-size: clamp(16px, 2.5vw, 24px); font-weight: 400; font-style: italic; color: #555; margin-bottom: 1.5rem; }
+.hero-desc { font-size: 14px; color: #777; line-height: 1.8; max-width: 560px; margin: 0 auto 2.5rem; }
+.hero-cta { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; background: linear-gradient(135deg, var(--rose), var(--orange)); color: white; border-radius: 30px; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(247,37,133,0.25); }
+.hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(247,37,133,0.35); }
+
+section { padding: 4rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+.section-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rose); margin-bottom: 0.75rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(26px, 3.5vw, 40px); font-weight: 700; color: var(--dark); margin-bottom: 2.5rem; line-height: 1.2; }
+
+/* STATS CARDS */
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin-bottom: 1rem; }
+.stat-card { padding: 1.5rem 1.25rem; border-radius: 18px; border: 1.5px solid rgba(247,37,133,0.15); background: white; text-align: center; }
+.stat-number { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 900; background: linear-gradient(135deg, var(--rose), var(--orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+.stat-label { font-size: 11px; color: #999; font-weight: 500; text-transform: uppercase; letter-spacing: 0.8px; margin-top: 6px; }
+.stat-sub { font-size: 11px; color: var(--rose); font-weight: 500; margin-top: 4px; }
+
+/* CHART BARS */
+.chart-wrap { background: white; border: 1.5px solid rgba(247,37,133,0.12); border-radius: 18px; padding: 2rem; margin-bottom: 14px; }
+.chart-title { font-size: 13px; font-weight: 600; color: var(--dark); margin-bottom: 1.5rem; }
+.chart-subtitle { font-size: 11px; color: #999; margin-top: -1rem; margin-bottom: 1.5rem; }
+.bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.bar-label { font-size: 12px; color: #555; min-width: 120px; text-align: right; }
+.bar-track { flex: 1; background: rgba(247,37,133,0.06); border-radius: 6px; height: 10px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--rose), var(--orange)); transform-origin: left; animation: barGrow 1s ease forwards; }
+@keyframes barGrow { from { width: 0 !important; } }
+.bar-val { font-size: 12px; font-weight: 600; color: var(--dark); min-width: 24px; }
+
+/* DAILY BARS (vertical) */
+.daily-chart { display: flex; align-items: flex-end; gap: 4px; height: 120px; padding: 0 0 1.5rem; border-bottom: 1px solid rgba(247,37,133,0.1); }
+.day-col { display: flex; flex-direction: column; align-items: center; flex: 1; height: 100%; justify-content: flex-end; }
+.day-bar { width: 100%; border-radius: 4px 4px 0 0; background: linear-gradient(180deg, var(--rose), var(--orange)); min-height: 4px; transition: opacity 0.2s; }
+.day-bar:hover { opacity: 0.75; }
+.day-bar.peak { background: linear-gradient(180deg, #FF006E, #F72585); }
+.day-date { font-size: 8px; color: #bbb; margin-top: 6px; transform: rotate(-45deg); white-space: nowrap; }
+.daily-legend { display: flex; justify-content: space-between; margin-top: 8px; font-size: 10px; color: #bbb; }
+
+/* GEO + OS */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media(max-width:700px){ .two-col { grid-template-columns: 1fr; } }
+
+.donut-wrap { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+.legend-list { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+/* INSIGHT CARDS */
+.insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.insight-card { padding: 1.5rem; border-radius: 18px; border: 1.5px solid rgba(247,37,133,0.15); background: white; }
+.insight-icon { font-size: 28px; margin-bottom: 10px; }
+.insight-title { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+.insight-text { font-size: 12px; color: #666; line-height: 1.65; }
+.insight-tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 10px; background: rgba(247,37,133,0.08); color: var(--rose); margin-top: 8px; }
+
+/* WHY WEB */
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.why-card { padding: 1.75rem 1.5rem; border-radius: 20px; border: 1.5px solid; }
+.why-card:nth-child(1) { border-color: rgba(247,37,133,0.2); background: rgba(247,37,133,0.03); }
+.why-card:nth-child(2) { border-color: rgba(244,128,42,0.2); background: rgba(244,128,42,0.03); }
+.why-card:nth-child(3) { border-color: rgba(76,201,240,0.2); background: rgba(76,201,240,0.03); }
+.why-card:nth-child(4) { border-color: rgba(249,197,49,0.25); background: rgba(249,197,49,0.04); }
+.why-emoji { font-size: 30px; margin-bottom: 12px; }
+.why-title { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+.why-text { font-size: 12px; color: #666; line-height: 1.65; }
+
+/* SITE PREVIEW */
+.site-preview { border-radius: 18px; overflow: hidden; border: 1.5px solid rgba(247,37,133,0.15); background: white; }
+.site-preview-bar { display: flex; align-items: center; gap: 6px; padding: 10px 16px; background: #f5f5f5; border-bottom: 1px solid #eee; }
+.preview-dot { width: 10px; height: 10px; border-radius: 50%; }
+.preview-url { flex: 1; background: white; border-radius: 6px; padding: 4px 10px; font-size: 11px; color: #999; border: 1px solid #e5e5e5; text-align: center; }
+.site-preview-body { padding: 2.5rem; text-align: center; background: linear-gradient(135deg, rgba(247,37,133,0.04), rgba(244,128,42,0.04)); }
+.site-preview-logo { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 900; color: var(--dark); margin-bottom: 8px; }
+.site-preview-tagline { font-size: 13px; color: #777; margin-bottom: 1.5rem; }
+
+/* QUOTE */
+.quote-block { background: linear-gradient(135deg, rgba(247,37,133,0.07), rgba(244,128,42,0.07)); border-left: 4px solid var(--rose); border-radius: 0 14px 14px 0; padding: 1.5rem 2rem; margin: 2rem 0; }
+.quote-text { font-family: 'Playfair Display', serif; font-size: 17px; font-style: italic; color: var(--dark); line-height: 1.6; }
+
+.divider { width: 100%; height: 1px; background: linear-gradient(to right, transparent, rgba(247,37,133,0.3), rgba(244,128,42,0.3), transparent); }
+footer { text-align: center; padding: 3rem 2rem; background: var(--dark); color: rgba(255,255,255,0.5); font-size: 12px; }
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 900; background: linear-gradient(135deg, var(--rose), var(--orange), var(--jaune)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; letter-spacing: 4px; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.fade { animation: fadeUp 0.7s ease both; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">← Eva Chabert</a>
+  <div class="nav-right">
+    <a class="nav-btn" href="index.html#communiquer">Portfolio</a>
+    <a class="nav-btn nav-btn-primary" href="https://alliance-consulting.vercel.app" target="_blank" rel="noopener">🌐 Voir le site</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content fade">
+    <div class="hero-tag">Projet 2026 · BUT TCSI · Start-up scolaire</div>
+    <div class="hero-title">Alliance<br>Consulting</div>
+    <div class="hero-sub">Upcycling d'instruments de musique</div>
+    <p class="hero-desc">Dans le cadre du Projet 2026 de l'IUT Lyon 1, j'ai conçu et déployé le site e-commerce complet de notre start-up Alliance Consulting — de zéro, sur Vercel, avec des données de trafic réelles à l'appui.</p>
+    <a class="hero-cta" href="https://alliance-consulting.vercel.app" target="_blank" rel="noopener">Visiter le site →</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- LE PROJET -->
+<section>
+  <div class="section-label">Contexte</div>
+  <h2 class="section-title">Un projet de start-up, un vrai site web</h2>
+  <div class="two-col" style="gap:2rem;align-items:start">
+    <div>
+      <p style="font-size:14px;color:#555;line-height:1.9;margin-bottom:1rem">
+        Alliance Consulting est une start-up fictive créée dans le cadre du Projet 2026, dont le concept repose sur <strong>l'upcycling d'instruments de musique</strong> — donner une seconde vie à des instruments usagés en les transformant en produits à valeur ajoutée.
+      </p>
+      <p style="font-size:14px;color:#555;line-height:1.9;margin-bottom:1rem">
+        Pour ce projet, j'ai pris l'initiative de créer <strong>un site e-commerce complet</strong>, hébergé sur Vercel, intégrant : présentation de l'entreprise et de l'équipe, catalogue produits, estimateur de devis, page partenaires et formulaire de contact.
+      </p>
+      <p style="font-size:14px;color:#555;line-height:1.9">
+        Ce que beaucoup d'équipes n'ont pas fait. Ce site a constitué un <strong>avantage concurrentiel direct</strong> dans l'évaluation du projet.
+      </p>
+    </div>
+    <div class="site-preview">
+      <div class="site-preview-bar">
+        <div class="preview-dot" style="background:#ff5f57"></div>
+        <div class="preview-dot" style="background:#febc2e"></div>
+        <div class="preview-dot" style="background:#28c840"></div>
+        <div class="preview-url">alliance-consulting.vercel.app</div>
+      </div>
+      <div class="site-preview-body">
+        <div class="site-preview-logo">Alliance Consulting</div>
+        <div class="site-preview-tagline">Upcycling · Musique · Lyon</div>
+        <a href="https://alliance-consulting.vercel.app" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:9px 20px;background:linear-gradient(135deg,var(--rose),var(--orange));color:white;border-radius:20px;font-size:12px;font-weight:600;text-decoration:none">Ouvrir le site ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CHIFFRES CLÉS -->
+<section>
+  <div class="section-label">Analytics — 2 avril au 12 mai 2026</div>
+  <h2 class="section-title">73 visites en 40 jours</h2>
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-number">73</div>
+      <div class="stat-label">Visites totales</div>
+      <div class="stat-sub">40 jours de tracking</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">58</div>
+      <div class="stat-label">IPs uniques</div>
+      <div class="stat-sub">visiteurs distincts</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">14</div>
+      <div class="stat-label">Pic journalier</div>
+      <div class="stat-sub">4 mai 2026</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">60%</div>
+      <div class="stat-label">Trafic en 1 semaine</div>
+      <div class="stat-sub">44 visites / 3–8 mai</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">71%</div>
+      <div class="stat-label">Trafic lyonnais</div>
+      <div class="stat-sub">Lyon + agglo</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">85%</div>
+      <div class="stat-label">iPhone / Safari</div>
+      <div class="stat-sub">profil jeune urbain</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ÉVOLUTION DU TRAFIC -->
+<section>
+  <div class="section-label">Évolution temporelle</div>
+  <h2 class="section-title">Le décollage début mai</h2>
+
+  <div class="chart-wrap">
+    <div class="chart-title">Visites par jour — avril/mai 2026</div>
+    <div class="chart-subtitle">Pic à 14 visites le 4 mai — déclenché par un partage Facebook</div>
+    <div class="daily-chart" id="dailyChart">
+      <!-- jours représentés, heights proportionnelles au max (14) -->
+      <div class="day-col"><div class="day-bar" style="height:7%"></div><div class="day-date">02/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:7%"></div><div class="day-date">06/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:7%"></div><div class="day-date">10/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:7%"></div><div class="day-date">17/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:14%"></div><div class="day-date">18/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:21%"></div><div class="day-date">19/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:7%"></div><div class="day-date">23/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:21%"></div><div class="day-date">24/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:7%"></div><div class="day-date">25/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:7%"></div><div class="day-date">26/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:21%"></div><div class="day-date">27/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:21%"></div><div class="day-date">28/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:21%"></div><div class="day-date">29/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:7%"></div><div class="day-date">30/04</div></div>
+      <div class="day-col"><div class="day-bar" style="height:7%"></div><div class="day-date">02/05</div></div>
+      <div class="day-col"><div class="day-bar" style="height:64%"></div><div class="day-date">03/05</div></div>
+      <div class="day-col"><div class="day-bar peak" style="height:100%"></div><div class="day-date">04/05</div></div>
+      <div class="day-col"><div class="day-bar" style="height:50%"></div><div class="day-date">05/05</div></div>
+      <div class="day-col"><div class="day-bar" style="height:50%"></div><div class="day-date">06/05</div></div>
+      <div class="day-col"><div class="day-bar" style="height:36%"></div><div class="day-date">07/05</div></div>
+      <div class="day-col"><div class="day-bar" style="height:50%"></div><div class="day-date">08/05</div></div>
+      <div class="day-col"><div class="day-bar" style="height:14%"></div><div class="day-date">12/05</div></div>
+    </div>
+    <div class="daily-legend"><span>Début avril</span><span>→ Accélération fin avril</span><span>→ Pic début mai</span></div>
+  </div>
+
+  <div class="quote-block">
+    <div class="quote-text">"La semaine du 3 au 8 mai concentre 44 visites sur 73 — soit 60% du total en seulement 7 jours. L'accélération brutale est cohérente avec un événement déclencheur : un partage sur Facebook, confirmé par la détection du bot Facebook le 3 mai à 8h43."</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- GÉOGRAPHIE + OPÉRATEURS -->
+<section>
+  <div class="section-label">Provenance des visiteurs</div>
+  <h2 class="section-title">Ancré dans l'écosystème lyonnais</h2>
+
+  <div class="two-col">
+    <div class="chart-wrap">
+      <div class="chart-title">Répartition géographique</div>
+      <div class="bar-row"><div class="bar-label">Lyon</div><div class="bar-track"><div class="bar-fill" style="width:49.3%"></div></div><div class="bar-val">49%</div></div>
+      <div class="bar-row"><div class="bar-label">Villeurbanne</div><div class="bar-track"><div class="bar-fill" style="width:11%"></div></div><div class="bar-val">11%</div></div>
+      <div class="bar-row"><div class="bar-label">Vénissieux</div><div class="bar-track"><div class="bar-fill" style="width:4.1%"></div></div><div class="bar-val">4%</div></div>
+      <div class="bar-row"><div class="bar-label">Autres Rhône-Alpes</div><div class="bar-track"><div class="bar-fill" style="width:11%"></div></div><div class="bar-val">11%</div></div>
+      <div class="bar-row"><div class="bar-label">Reste France</div><div class="bar-track"><div class="bar-fill" style="width:16.4%"></div></div><div class="bar-val">16%</div></div>
+      <div class="bar-row"><div class="bar-label">Étranger (bot)</div><div class="bar-track"><div class="bar-fill" style="width:1.4%"></div></div><div class="bar-val">1%</div></div>
+      <p style="font-size:11px;color:#999;margin-top:1rem">Lyon + agglo immédiate = <strong style="color:var(--rose)">71% du trafic</strong></p>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-title">Opérateurs réseau</div>
+      <div class="bar-row"><div class="bar-label">Bouygues</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="bar-val">22</div></div>
+      <div class="bar-row"><div class="bar-label">Free</div><div class="bar-track"><div class="bar-fill" style="width:63.6%"></div></div><div class="bar-val">14</div></div>
+      <div class="bar-row"><div class="bar-label">SFR</div><div class="bar-track"><div class="bar-fill" style="width:45.5%"></div></div><div class="bar-val">10</div></div>
+      <div class="bar-row"><div class="bar-label">ROCAD (Univ.)</div><div class="bar-track"><div class="bar-fill" style="width:36.4%"></div></div><div class="bar-val">8</div></div>
+      <div class="bar-row"><div class="bar-label">Free Mobile</div><div class="bar-track"><div class="bar-fill" style="width:36.4%"></div></div><div class="bar-val">8</div></div>
+      <div class="bar-row"><div class="bar-label">Orange</div><div class="bar-track"><div class="bar-fill" style="width:22.7%"></div></div><div class="bar-val">5</div></div>
+      <div class="bar-row"><div class="bar-label">VPN (Cloudflare)</div><div class="bar-track"><div class="bar-fill" style="width:18.2%"></div></div><div class="bar-val">4</div></div>
+      <p style="font-size:11px;color:#999;margin-top:1rem">ROCAD = réseau universitaire Lyon 1/INSA — <strong style="color:var(--rose)">milieu étudiant</strong> confirmé</p>
+    </div>
+  </div>
+
+  <div class="two-col" style="margin-top:14px">
+    <div class="chart-wrap">
+      <div class="chart-title">Navigateurs</div>
+      <div class="bar-row"><div class="bar-label">Safari (iPhone/Mac)</div><div class="bar-track"><div class="bar-fill" style="width:82%"></div></div><div class="bar-val">82%</div></div>
+      <div class="bar-row"><div class="bar-label">Chrome</div><div class="bar-track"><div class="bar-fill" style="width:14%"></div></div><div class="bar-val">14%</div></div>
+      <div class="bar-row"><div class="bar-label">Autres</div><div class="bar-track"><div class="bar-fill" style="width:4%"></div></div><div class="bar-val">4%</div></div>
+    </div>
+    <div class="chart-wrap">
+      <div class="chart-title">Systèmes d'exploitation</div>
+      <div class="bar-row"><div class="bar-label">macOS / iOS</div><div class="bar-track"><div class="bar-fill" style="width:84.9%"></div></div><div class="bar-val">85%</div></div>
+      <div class="bar-row"><div class="bar-label">Windows</div><div class="bar-track"><div class="bar-fill" style="width:11%"></div></div><div class="bar-val">11%</div></div>
+      <div class="bar-row"><div class="bar-label">Android</div><div class="bar-track"><div class="bar-fill" style="width:2.74%"></div></div><div class="bar-val">3%</div></div>
+      <div class="bar-row"><div class="bar-label">Linux</div><div class="bar-track"><div class="bar-fill" style="width:1.37%"></div></div><div class="bar-val">1%</div></div>
+      <p style="font-size:11px;color:#999;margin-top:1rem">85% macOS = quasi-totalité sur <strong style="color:var(--rose)">iPhone</strong></p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- INSIGHTS -->
+<section>
+  <div class="section-label">Signaux notables</div>
+  <h2 class="section-title">Ce que les données révèlent</h2>
+  <div class="insights-grid">
+    <div class="insight-card">
+      <div class="insight-icon">📘</div>
+      <div class="insight-title">Preuve d'un partage Facebook</div>
+      <div class="insight-text">Le 3 mai à 8h43, le bot Facebook (IP 31.13.115.16, datacenter Luleå, Suède) a visité le site pendant 32 secondes. Ce bot se déclenche automatiquement quand un lien est posté sur Facebook — c'est la preuve directe qu'un partage a eu lieu ce matin-là, déclenchant l'afflux de 9 visites dans la journée.</div>
+      <span class="insight-tag">Viralité organique</span>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">🎓</div>
+      <div class="insight-title">Réseau universitaire Lyon 1 / INSA</div>
+      <div class="insight-text">8 visites depuis le réseau ROCAD (réseau universitaire Villeurbanne). Ce signal confirme que le site a atteint des camarades de l'IUT ou de l'INSA, probablement via un lien partagé dans un groupe de classe ou lors d'une présentation.</div>
+      <span class="insight-tag">Audience étudiante</span>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">⏱️</div>
+      <div class="insight-title">Sessions ultra-engagées</div>
+      <div class="insight-text">Plusieurs sessions dépassent les 30 minutes : 48min59 le 28 avril (Bouygues, Lyon), 154min le 4 mai (Free, Lyon), 91min le 5 mai. Ces durées indiquent des visiteurs qui ont vraiment lu et exploré le contenu — pas de simples clics accidentels.</div>
+      <span class="insight-tag">Engagement fort</span>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">🔁</div>
+      <div class="insight-title">Visiteur récurrent (×10)</div>
+      <div class="insight-text">Une IP Free SAS de Lyon revient au moins 10 fois entre le 17 avril et le 5 mai, avec des durées sérieuses (3min, 6min, 15min…). Il s'agit très probablement d'un membre de l'équipe, d'un prof ou d'un proche très impliqué dans le suivi du projet.</div>
+      <span class="insight-tag">Suivi régulier</span>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">🌍</div>
+      <div class="insight-title">Rayonnement hors Lyon</div>
+      <div class="insight-text">16% du trafic provient hors Rhône-Alpes : Île-de-France, Occitanie, Normandie, Bretagne, Pays de la Loire. Ces visites sporadiques représentent probablement des contacts transmis par bouche-à-oreille ou partagés hors du cercle lyonnais.</div>
+      <span class="insight-tag">Diffusion nationale</span>
+    </div>
+    <div class="insight-card">
+      <div class="insight-icon">📱</div>
+      <div class="insight-title">Public 100% mobile-first</div>
+      <div class="insight-text">82% Safari + 85% macOS = audience qui consulte principalement depuis iPhone. Cela valide l'importance d'un site parfaitement optimisé mobile — ce que le site Alliance Consulting a été conçu pour être dès le départ.</div>
+      <span class="insight-tag">Mobile-first</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- POURQUOI UN SITE EN 2026 -->
+<section>
+  <div class="section-label">Analyse stratégique</div>
+  <h2 class="section-title">Pourquoi avoir un site web change tout, en 2026</h2>
+
+  <div class="quote-block">
+    <div class="quote-text">"Sur les 73 visites enregistrées, 98% venaient de France. La preuve qu'un site crée une présence mesurable, traçable et durable — là où un simple PDF ou une présentation orale disparaît."</div>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-emoji">📊</div>
+      <div class="why-title">Données réelles, non simulées</div>
+      <div class="why-text">Contrairement à une étude de marché fictive, un site génère de vraies données de trafic. Ces 73 visites prouvent que le projet a été vu, consulté, partagé — une preuve concrète d'impact impossible à falsifier.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-emoji">🚀</div>
+      <div class="why-title">Différenciation immédiate</div>
+      <div class="why-text">Dans une promotion où peu d'équipes ont déployé un vrai site, cette initiative constitue un avantage concurrentiel direct. Cela montre une maîtrise des outils digitaux au-delà du simple cours.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-emoji">🔗</div>
+      <div class="why-title">Crédibilité et professionnalisme</div>
+      <div class="why-text">Un lien partageable (alliance-consulting.vercel.app) crédibilise le projet auprès des partenaires potentiels, des jurys et des professeurs. Un site, c'est une adresse. Une adresse, c'est une existence.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-emoji">📡</div>
+      <div class="why-title">Viralité organique prouvée</div>
+      <div class="why-text">Le bot Facebook du 3 mai prouve qu'un partage réel a eu lieu. Sans site, ce partage n'aurait pas existé. Le contenu numérique se diffuse ; une affiche ou un dossier PDF, non.</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CE QUE CA M'A APPORTÉ -->
+<section style="text-align:center;padding-bottom:5rem">
+  <div class="section-label">Compétences acquises</div>
+  <h2 class="section-title" style="max-width:600px;margin-left:auto;margin-right:auto">Ce projet m'a appris à créer de la valeur digitale réelle</h2>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:0">
+    <span style="padding:8px 18px;border-radius:20px;border:1.5px solid rgba(247,37,133,0.3);color:var(--rose);font-size:12px;font-weight:500">Développement web (HTML/CSS/JS)</span>
+    <span style="padding:8px 18px;border-radius:20px;border:1.5px solid rgba(244,128,42,0.3);color:var(--orange);font-size:12px;font-weight:500">Déploiement Vercel</span>
+    <span style="padding:8px 18px;border-radius:20deg;border-radius:20px;border:1.5px solid rgba(76,201,240,0.3);color:#0096C7;font-size:12px;font-weight:500">Analyse de trafic web</span>
+    <span style="padding:8px 18px;border-radius:20px;border:1.5px solid rgba(249,197,49,0.4);color:#B8860B;font-size:12px;font-weight:500">Stratégie de communication digitale</span>
+    <span style="padding:8px 18px;border-radius:20px;border:1.5px solid rgba(247,37,133,0.3);color:var(--rose);font-size:12px;font-weight:500">E-commerce & UX</span>
+    <span style="padding:8px 18px;border-radius:20px;border:1.5px solid rgba(244,128,42,0.3);color:var(--orange);font-size:12px;font-weight:500">Lecture d'indicateurs KPI</span>
+  </div>
+  <div style="margin-top:2.5rem">
+    <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border:1.5px solid rgba(247,37,133,0.3);color:var(--rose);border-radius:30px;font-size:13px;font-weight:600;text-decoration:none;transition:all 0.2s" onmouseover="this.style.background='var(--rose)';this.style.color='white'" onmouseout="this.style.background='transparent';this.style.color='var(--rose)'">← Retour au portfolio complet</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">E · C</div>
+  <p>Eva Chabert · BUT TCSI · IUT Lyon 1 · 2025–2026</p>
+  <p style="margin-top:6px"><a href="https://alliance-consulting.vercel.app" target="_blank" rel="noopener" style="color:rgba(247,37,133,0.7);text-decoration:none">alliance-consulting.vercel.app</a></p>
+</footer>
+
+</body>
+</html>
