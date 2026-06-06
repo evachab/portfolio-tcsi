@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Eva Chabert — BUT TCSI 2025-2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --rose: #F72585; --orange: #F4802A; --jaune: #F9C531; --cyan: #4CC9F0;
+  --dark: #1A0A0F; --white: #FFFAF8;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--dark); overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2.5rem; background: rgba(255,250,248,0.88); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(247,37,133,0.15); }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 900; background: linear-gradient(135deg, var(--rose), var(--orange), var(--jaune)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; letter-spacing: 3px; }
+.nav-links { display: flex; gap: 6px; list-style: none; }
+.nav-links a { text-decoration: none; font-size: 12px; font-weight: 500; color: var(--dark); padding: 6px 14px; border-radius: 20px; transition: all 0.2s; }
+.nav-links a:hover { background: var(--rose); color: white; }
+
+/* HERO */
+.hero { min-height: 100vh; padding: 7rem 2rem 4rem; position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center; }
+.hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 40% at 20% 30%, rgba(247,37,133,0.12) 0%, transparent 60%), radial-gradient(ellipse 50% 50% at 80% 70%, rgba(244,128,42,0.1) 0%, transparent 60%), radial-gradient(ellipse 40% 40% at 50% 10%, rgba(76,201,240,0.08) 0%, transparent 50%); z-index: 0; }
+.hero-top { position: relative; z-index: 1; text-align: center; max-width: 900px; width: 100%; }
+.hero-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rose); background: rgba(247,37,133,0.1); padding: 6px 18px; border-radius: 20px; margin-bottom: 1.5rem; animation: fadeUp 0.6s ease both; }
+.hero-title { font-family: 'Playfair Display', serif; font-size: clamp(52px, 11vw, 120px); font-weight: 900; letter-spacing: 0.3em; line-height: 1; margin-bottom: 0.5rem; animation: fadeUp 0.8s ease 0.1s both; }
+.hero-title span { display: inline-block; animation: colorCycle 4s ease-in-out infinite; }
+.hero-title span:nth-child(1){animation-delay:0s} .hero-title span:nth-child(2){animation-delay:0.3s} .hero-title span:nth-child(3){animation-delay:0.6s} .hero-title span:nth-child(4){animation-delay:0.9s} .hero-title span:nth-child(5){animation-delay:1.2s} .hero-title span:nth-child(6){animation-delay:1.5s} .hero-title span:nth-child(7){animation-delay:1.8s} .hero-title span:nth-child(8){animation-delay:2.1s} .hero-title span:nth-child(9){animation-delay:2.4s}
+@keyframes colorCycle { 0%,100%{color:var(--rose)} 25%{color:var(--orange)} 50%{color:var(--jaune)} 75%{color:var(--cyan)} }
+.hero-name { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 46px); font-weight: 400; font-style: italic; color: var(--dark); margin-bottom: 1rem; animation: fadeUp 0.8s ease 0.2s both; }
+.hero-desc { font-size: 13px; color: #777; line-height: 1.8; max-width: 480px; margin: 0 auto 1.5rem; animation: fadeUp 0.8s ease 0.25s both; }
+.hero-pills { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 3rem; animation: fadeUp 0.8s ease 0.3s both; }
+.pill { font-size: 12px; font-weight: 500; padding: 7px 18px; border-radius: 30px; border: 1.5px solid; transition: all 0.2s; cursor: default; }
+.pill-rose{color:var(--rose);border-color:var(--rose);background:rgba(247,37,133,0.06)} .pill-rose:hover{background:var(--rose);color:white}
+.pill-orange{color:var(--orange);border-color:var(--orange);background:rgba(244,128,42,0.06)} .pill-orange:hover{background:var(--orange);color:white}
+.pill-cyan{color:#0096C7;border-color:var(--cyan);background:rgba(76,201,240,0.06)} .pill-cyan:hover{background:var(--cyan);color:white}
+
+/* GALERIE */
+.hero-gallery { position: relative; z-index: 1; width: 100%; max-width: 1000px; animation: fadeUp 0.8s ease 0.4s both; margin-bottom: 3rem; }
+.pinterest-grid { columns: 4; gap: 12px; column-fill: balance; }
+@media(max-width:700px){.pinterest-grid{columns:2}}
+.pin-card { break-inside: avoid; margin-bottom: 12px; border-radius: 14px; overflow: hidden; position: relative; cursor: pointer; transition: transform 0.3s, box-shadow 0.3s; box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+.pin-card:hover { transform: scale(1.03) translateY(-3px); box-shadow: 0 12px 32px rgba(247,37,133,0.2); }
+.pin-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pin-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: rgba(255,255,255,0.85); font-size: 11px; font-weight: 500; text-align: center; padding: 16px 10px; }
+.pin-h1{height:180px} .pin-h2{height:240px} .pin-h3{height:150px} .pin-h4{height:200px} .pin-h5{height:160px} .pin-h6{height:220px} .pin-h7{height:170px} .pin-h8{height:190px} .pin-h9{height:210px} .pin-h10{height:155px} .pin-h11{height:230px} .pin-h12{height:175px}
+.pin-c1{background:linear-gradient(145deg,#F72585,#F4802A)} .pin-c2{background:linear-gradient(145deg,#F4802A,#F9C531)} .pin-c3{background:linear-gradient(145deg,#4CC9F0,#F72585)} .pin-c4{background:linear-gradient(145deg,#F9C531,#F72585)} .pin-c5{background:linear-gradient(145deg,#F72585,#4CC9F0)} .pin-c6{background:linear-gradient(145deg,#F4802A,#F72585)} .pin-c7{background:linear-gradient(145deg,#4CC9F0,#F9C531)} .pin-c8{background:linear-gradient(145deg,#F9C531,#F4802A)} .pin-c9{background:linear-gradient(145deg,#F72585,#F9C531)} .pin-c10{background:linear-gradient(145deg,#4CC9F0,#F4802A)} .pin-c11{background:linear-gradient(145deg,#F4802A,#4CC9F0)} .pin-c12{background:linear-gradient(145deg,#F9C531,#4CC9F0)}
+
+.scroll-cta { position: relative; z-index: 1; font-size: 11px; color: #999; letter-spacing: 1px; text-transform: uppercase; animation: bounce 2s ease-in-out infinite; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+
+/* SECTIONS */
+section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
+.section-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--rose); margin-bottom: 0.75rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(28px,4vw,44px); font-weight: 700; color: var(--dark); margin-bottom: 3rem; line-height: 1.2; }
+
+/* LOGOS */
+.logos-row { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.logo-box { padding: 10px 18px; border-radius: 12px; border: 1.5px solid rgba(247,37,133,0.2); font-size: 13px; font-weight: 600; color: var(--dark); display: flex; align-items: center; gap: 8px; }
+.logo-ec { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg,var(--rose),var(--orange)); display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 900; color: white; }
+
+/* CONTACT */
+.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 12px; margin-bottom: 3rem; }
+.contact-card { display: flex; align-items: center; gap: 12px; padding: 1rem 1.25rem; border-radius: 14px; border: 1.5px solid rgba(247,37,133,0.15); background: white; transition: all 0.2s; text-decoration: none; color: var(--dark); }
+.contact-card:hover { border-color: var(--rose); transform: translateY(-2px); box-shadow: 0 4px 20px rgba(247,37,133,0.12); }
+.contact-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+.icon-rose{background:rgba(247,37,133,0.1);color:var(--rose)} .icon-orange{background:rgba(244,128,42,0.1);color:var(--orange)} .icon-cyan{background:rgba(76,201,240,0.1);color:#0096C7} .icon-jaune{background:rgba(249,197,49,0.1);color:#B8860B}
+.contact-info{display:flex;flex-direction:column;gap:2px}
+.contact-label{font-size:10px;color:#999;font-weight:500;text-transform:uppercase;letter-spacing:0.5px}
+.contact-value{font-size:12px;font-weight:500;color:var(--dark)}
+
+/* FORMATION */
+.form-card { padding: 1.5rem; border-radius: 16px; background: linear-gradient(135deg,rgba(247,37,133,0.06),rgba(244,128,42,0.06)); border: 1.5px solid rgba(247,37,133,0.15); margin-bottom: 12px; display: flex; align-items: flex-start; gap: 16px; }
+.form-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+.form-date{font-size:11px;color:#999;font-weight:500;margin-bottom:4px}
+.form-title{font-size:14px;font-weight:600;color:var(--dark);margin-bottom:2px}
+.form-lieu{font-size:12px;color:var(--rose)}
+
+/* SOMMAIRE COMPETENCES */
+.portfolio-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:3rem}
+.portfolio-nav-card { padding:2rem;border-radius:20px;text-align:center;cursor:pointer;transition:all 0.25s;border:2px solid transparent;text-decoration:none; }
+.portfolio-nav-card:hover{transform:translateY(-4px)}
+.pnc-marketer{background:linear-gradient(135deg,rgba(247,37,133,0.08),rgba(247,37,133,0.03));border-color:rgba(247,37,133,0.2)}
+.pnc-marketer:hover{border-color:var(--rose);box-shadow:0 8px 32px rgba(247,37,133,0.15)}
+.pnc-vendre{background:linear-gradient(135deg,rgba(244,128,42,0.08),rgba(244,128,42,0.03));border-color:rgba(244,128,42,0.2)}
+.pnc-vendre:hover{border-color:var(--orange);box-shadow:0 8px 32px rgba(244,128,42,0.15)}
+.pnc-communiquer{background:linear-gradient(135deg,rgba(76,201,240,0.08),rgba(76,201,240,0.03));border-color:rgba(76,201,240,0.2)}
+.pnc-communiquer:hover{border-color:var(--cyan);box-shadow:0 8px 32px rgba(76,201,240,0.15)}
+.pnc-emoji{font-size:36px;margin-bottom:12px}
+.pnc-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-bottom:6px}
+.pnc-sub{font-size:11px;color:#999}
+.pnc-marketer .pnc-title{color:var(--rose)} .pnc-vendre .pnc-title{color:var(--orange)} .pnc-communiquer .pnc-title{color:#0096C7}
+
+/* AC PAGES */
+.page-header { padding: 8rem 2.5rem 3rem; text-align: center; position: relative; overflow: hidden; }
+.page-header-bg { position: absolute; inset: 0; z-index: 0; }
+.page-header-content { position: relative; z-index: 1; }
+.page-badge { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 6px 18px; border-radius: 20px; margin-bottom: 1rem; }
+.page-big-title { font-family: 'Playfair Display', serif; font-size: clamp(40px, 8vw, 90px); font-weight: 900; letter-spacing: 0.1em; line-height: 1; margin-bottom: 0.75rem; }
+.page-subtitle { font-size: 14px; color: #777; max-width: 500px; margin: 0 auto; line-height: 1.7; }
+
+/* AC CARDS */
+.ac-section { padding: 0 2.5rem 5rem; max-width: 1100px; margin: 0 auto; }
+.ac-card { background: white; border-radius: 20px; margin-bottom: 2rem; overflow: hidden; border: 1.5px solid rgba(0,0,0,0.06); box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.ac-card-header { padding: 1.5rem 2rem; display: flex; align-items: flex-start; gap: 16px; }
+.ac-badge { font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 6px; flex-shrink: 0; margin-top: 2px; }
+.ac-card-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; line-height: 1.4; flex: 1; }
+.ac-prof { font-size: 11px; font-style: italic; margin-top: 4px; }
+.ac-card-body { padding: 0 2rem 1.5rem; }
+.ac-preuves { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.preuve-chip { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 500; padding: 5px 12px; border-radius: 20px; }
+.ac-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 12px; }
+.ac-point { padding: 1rem; border-radius: 12px; background: #FAFAFA; border-left: 3px solid; }
+.ac-point-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
+.ac-point-text { font-size: 12px; color: #555; line-height: 1.7; }
+
+/* MARKETER COLORS */
+.marketer .page-header-bg { background: linear-gradient(135deg, rgba(247,37,133,0.08), rgba(247,37,133,0.02)); }
+.marketer .page-badge { background: rgba(247,37,133,0.1); color: var(--rose); }
+.marketer .page-big-title { color: var(--rose); }
+.marketer .ac-badge { background: rgba(247,37,133,0.1); color: var(--rose); }
+.marketer .ac-prof { color: var(--rose); }
+.marketer .preuve-chip { background: rgba(247,37,133,0.08); color: var(--rose); }
+.marketer .ac-point { border-left-color: var(--rose); }
+.marketer .ac-point-label { color: var(--rose); }
+
+/* VENDRE COLORS */
+.vendre .page-header-bg { background: linear-gradient(135deg, rgba(244,128,42,0.08), rgba(244,128,42,0.02)); }
+.vendre .page-badge { background: rgba(244,128,42,0.1); color: var(--orange); }
+.vendre .page-big-title { color: var(--orange); }
+.vendre .ac-badge { background: rgba(244,128,42,0.1); color: var(--orange); }
+.vendre .ac-prof { color: var(--orange); }
+.vendre .preuve-chip { background: rgba(244,128,42,0.08); color: var(--orange); }
+.vendre .ac-point { border-left-color: var(--orange); }
+.vendre .ac-point-label { color: var(--orange); }
+
+/* COMMUNIQUER COLORS */
+.communiquer .page-header-bg { background: linear-gradient(135deg, rgba(76,201,240,0.08), rgba(76,201,240,0.02)); }
+.communiquer .page-badge { background: rgba(76,201,240,0.1); color: #0096C7; }
+.communiquer .page-big-title { color: #0096C7; }
+.communiquer .ac-badge { background: rgba(76,201,240,0.1); color: #0096C7; }
+.communiquer .ac-prof { color: #0096C7; }
+.communiquer .preuve-chip { background: rgba(76,201,240,0.08); color: #0096C7; }
+.communiquer .ac-point { border-left-color: var(--cyan); }
+.communiquer .ac-point-label { color: #0096C7; }
+
+/* CONCLUSION */
+.conclusion-hero { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 8rem 2rem 4rem; background: linear-gradient(135deg, rgba(247,37,133,0.06), rgba(244,128,42,0.04), rgba(76,201,240,0.04)); }
+.conclusion-title { font-family: 'Playfair Display', serif; font-size: clamp(36px,6vw,72px); font-weight: 900; background: linear-gradient(135deg, var(--rose), var(--orange), var(--jaune)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 1.5rem; }
+.conclusion-text { font-size: 15px; color: #555; line-height: 1.9; max-width: 700px; margin: 0 auto 3rem; }
+.perspective-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 16px; max-width: 900px; margin: 0 auto; }
+.perspective-card { padding: 1.5rem; border-radius: 16px; text-align: center; border: 1.5px solid; transition: all 0.2s; }
+.perspective-card:hover { transform: translateY(-3px); }
+.perspective-card:nth-child(1) { border-color: rgba(247,37,133,0.3); background: rgba(247,37,133,0.04); }
+.perspective-card:nth-child(2) { border-color: rgba(244,128,42,0.3); background: rgba(244,128,42,0.04); }
+.perspective-card:nth-child(3) { border-color: rgba(76,201,240,0.3); background: rgba(76,201,240,0.04); }
+.perspective-card:nth-child(4) { border-color: rgba(249,197,49,0.4); background: rgba(249,197,49,0.06); }
+.perspective-emoji { font-size: 32px; margin-bottom: 10px; }
+.perspective-title { font-size: 14px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+.perspective-text { font-size: 12px; color: #777; line-height: 1.6; }
+
+.divider{width:100%;height:1px;background:linear-gradient(to right,transparent,rgba(247,37,133,0.3),rgba(244,128,42,0.3),transparent)}
+footer{text-align:center;padding:3rem 2rem;background:var(--dark);color:rgba(255,255,255,0.5);font-size:12px}
+.footer-logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;background:linear-gradient(135deg,var(--rose),var(--orange),var(--jaune));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;letter-spacing:4px}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">E · C</div>
+  <ul class="nav-links">
+    <li><a href="#accueil">Accueil</a></li>
+    <li><a href="#marketer">Marketer</a></li>
+    <li><a href="#vendre">Vendre</a></li>
+    <li><a href="#communiquer">Communiquer</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+
+<!-- ==================== ACCUEIL ==================== -->
+<div class="hero" id="accueil">
+  <div class="hero-bg"></div>
+  <div class="hero-top">
+    <div class="hero-tag">BUT TCSI · IUT Lyon 1 · 2025–2026</div>
+    <h1 class="hero-title">
+      <span>P</span><span>&nbsp;</span><span>O</span><span>&nbsp;</span><span>R</span><span>&nbsp;</span><span>T</span><span>&nbsp;</span><span>F</span><span>&nbsp;</span><span>O</span><span>&nbsp;</span><span>L</span><span>&nbsp;</span><span>I</span><span>&nbsp;</span><span>O</span>
+    </h1>
+    <div class="hero-name">Eva Chabert</div>
+    <p class="hero-desc">Étudiante en 1ère année de BUT Techniques de Commercialisation des Systèmes Industriels · IUT Lyon 1, site Gratte-Ciel, Villeurbanne</p>
+    <div class="hero-pills">
+      <span class="pill pill-rose">🎯 Marketer</span>
+      <span class="pill pill-orange">💼 Vendre</span>
+      <span class="pill pill-cyan">📣 Communiquer</span>
+    </div>
+  </div>
+  <div class="hero-gallery">
+    <div class="pinterest-grid">
+      <!-- REMPLACE src="" PAR TES VRAIES PHOTOS -->
+      <div class="pin-card pin-c1 pin-h2"><div class="pin-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span>Photo perso</span></div></div>
+      <div class="pin-card pin-c3 pin-h4"><div class="pin-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Tenue usinage</span></div></div>
+      <div class="pin-card pin-c5 pin-h2"><div class="pin-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Tenue pro</span></div></div>
+      <div class="pin-card pin-c7 pin-h3"><div class="pin-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Pollutec</span></div></div>
+      <div class="pin-card pin-c2 pin-h3"><div class="pin-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Jeu de rôle</span></div></div>
+      <div class="pin-card pin-c4 pin-h2"><div class="pin-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>IUT</span></div></div>
+      <div class="pin-card pin-c6 pin-h4"><div class="pin-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Alliance Consulting</span></div></div>
+      <div class="pin-card pin-c8 pin-h2"><div class="pin-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Ma promo</span></div></div>
+      <div class="pin-card pin-c9 pin-h3"><div class="pin-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Teamwork</span></div></div>
+      <div class="pin-card pin-c10 pin-h3"><div class="pin-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Stage</span></div></div>
+      <div class="pin-card pin-c11 pin-h4"><div class="pin-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Cours & TD</span></div></div>
+      <div class="pin-card pin-c12 pin-h2"><div class="pin-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Communication</span></div></div>
+    </div>
+  </div>
+  <div class="scroll-cta"><span>Découvrir</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- CONTACT & FORMATION -->
+<section>
+  <div class="section-label">Identité</div>
+  <h2 class="section-title">Bienvenue sur mon portfolio 👋</h2>
+  <div class="logos-row">
+    <div class="logo-box"><div class="logo-ec">EC</div>Eva Chabert</div>
+    <div class="logo-box">🎓 IUT Lyon 1</div>
+    <div class="logo-box">⚙️ BUT TCSI</div>
+    <div class="logo-box">📍 Gratte-Ciel, Villeurbanne</div>
+  </div>
+  <div class="section-label">Me contacter</div>
+  <div class="contact-grid">
+    <a class="contact-card" href="mailto:eva.chabert@etu.univ-lyon1.fr"><div class="contact-icon icon-rose">✉️</div><div class="contact-info"><span class="contact-label">Email</span><span class="contact-value">eva.chabert@etu.univ-lyon1.fr</span></div></a>
+    <a class="contact-card" href="tel:0782679136"><div class="contact-icon icon-orange">📱</div><div class="contact-info"><span class="contact-label">Téléphone</span><span class="contact-value">07.82.67.91.36</span></div></a>
+    <a class="contact-card" href="https://www.linkedin.com/in/eva-chabert" target="_blank"><div class="contact-icon icon-cyan">💼</div><div class="contact-info"><span class="contact-label">LinkedIn</span><span class="contact-value">linkedin.com/in/eva-chabert</span></div></a>
+    <a class="contact-card" href="Alternante.pdf" download><div class="contact-icon icon-jaune">📄</div><div class="contact-info"><span class="contact-label">CV</span><span class="contact-value">Télécharger mon CV</span></div></a>
+    <div class="contact-card"><div class="contact-icon icon-rose">📍</div><div class="contact-info"><span class="contact-label">Adresse</span><span class="contact-value">183 rue du clos Saint Mathieu, 69380 Lozanne</span></div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="section-label">Études</div>
+  <h2 class="section-title">Ma formation</h2>
+  <div class="form-card"><div class="form-dot" style="background:var(--rose)"></div><div><div class="form-date">2025 – 2028</div><div class="form-title">BUT TCSI — Techniques de Commercialisation des Systèmes Industriels</div><div class="form-lieu">IUT Lyon 1 · Site Gratte-Ciel, Villeurbanne</div></div></div>
+  <div class="form-card"><div class="form-dot" style="background:var(--orange)"></div><div><div class="form-date">2022 – 2025</div><div class="form-title">Baccalauréat Général — SES + LLCER</div><div class="form-lieu">Lycée Germaine Tillon, Sain-Bel</div></div></div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="section-label">Sommaire</div>
+  <h2 class="section-title">Mes compétences BUT TCSI</h2>
+  <div class="portfolio-nav">
+    <a class="portfolio-nav-card pnc-marketer" href="#marketer"><div class="pnc-emoji">🎯</div><div class="pnc-title">Marketer</div><div class="pnc-sub">5 apprentissages critiques</div></a>
+    <a class="portfolio-nav-card pnc-vendre" href="#vendre"><div class="pnc-emoji">💼</div><div class="pnc-title">Vendre</div><div class="pnc-sub">7 apprentissages critiques</div></a>
+    <a class="portfolio-nav-card pnc-communiquer" href="#communiquer"><div class="pnc-emoji">📣</div><div class="pnc-title">Communiquer</div><div class="pnc-sub">5 apprentissages critiques</div></a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== MARKETER ==================== -->
+<div id="marketer" class="marketer">
+  <div class="page-header">
+    <div class="page-header-bg"></div>
+    <div class="page-header-content">
+      <div class="page-badge">Compétence 1 · 5 AC</div>
+      <div class="page-big-title">Marketer</div>
+      <p class="page-subtitle">Construire une offre commerciale simple · Mme Laurent / Marketing</p>
+    </div>
+  </div>
+  <div class="ac-section marketer">
+    <!-- AC M.1 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC M.1</span>
+        <div><div class="ac-card-title">Analyser l'environnement d'une entreprise en repérant et appréciant les sources d'informations</div><div class="ac-prof">Mme Laurent / Marketing</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Diagnostic ABB — PESTEL + SWOT (B2B)</span>
+          <span class="preuve-chip">📎 Diagnostic Monin (B2C, cours management)</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">J'ai réalisé deux diagnostics externes complets sur des entreprises de secteurs différents. Pour ABB (B2B, robotique industrielle), j'ai produit en groupe une analyse PESTEL complète, une étude de la concurrence (Siemens, Schneider, Emerson), une analyse de la demande et un SWOT. Pour Monin (B2C), j'ai analysé l'environnement de l'entreprise en cours de management.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Marketing (méthodes PESTEL, SWOT, 5 forces de Porter), recherches sur internet, rapports annuels d'entreprises, site officiel d'ABB, articles de presse spécialisée.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Deux diagnostics complets et structurés couvrant des contextes B2B et B2C. Pour ABB, j'ai compris les enjeux de la transition énergétique et de la digitalisation industrielle. La diversité des contextes démontre mon adaptabilité analytique.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">J'intégrerais davantage de données chiffrées pour enrichir l'analyse, et je commencerais par une analyse macro avant de zoomer sur l'entreprise. J'utiliserais aussi des sources sectorielles plus spécialisées.</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC M.2 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC M.2</span>
+        <div><div class="ac-card-title">Mettre en œuvre une étude de marché dans un environnement simple</div><div class="ac-prof">Mme Laurent / Marketing</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Cas cosmétique — étude quantitative marché beauté</span>
+          <span class="preuve-chip">📎 SAé Kitchen Daily S2 — étude de marché complète</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans un cas pratique réalisé en cours, j'ai mené une étude de marché quantitative sur le secteur cosmétique en calculant des taux d'évolution et en identifiant des segments. Pour la SAé Kitchen Daily, j'ai réalisé une étude de marché complète incluant l'analyse de l'environnement et du marché de mon entreprise.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Marketing sur les études quantitatives et qualitatives, outils de calcul (taux d'évolution, PDM), recherches internet sur le marché ciblé.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">J'ai appris à structurer une étude de marché et à en interpréter les résultats pour orienter une stratégie commerciale. La progression entre le cas cosmétique (exercice guidé) et Kitchen Daily (projet complet) montre une vraie montée en compétences.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">Je diversifierais davantage mes sources et j'utiliserais des études sectorielles officielles pour enrichir l'analyse quantitative. Je structurerais aussi ma démarche avec un tableau de bord de sources pour éviter les doublons.</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC M.3 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC M.3</span>
+        <div><div class="ac-card-title">Choisir une cible et un positionnement en fonction de la segmentation du marché</div><div class="ac-prof">Mme Laurent / Marketing</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Cas Evian — positionnement + mix marketing</span>
+          <span class="preuve-chip">📎 Cas Oreo — segmentation + ciblage multicanal</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans un cas pratique en cours, j'ai analysé le positionnement d'Evian sur le marché de l'eau en bouteille et son mix marketing. Pour Oreo, j'ai étudié la segmentation de la marque et son ciblage multicanal (médias sociaux, mass médias, événements, échantillons).</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Marketing sur la segmentation, le ciblage et le positionnement (SCP). Sites officiels des marques, articles marketing, analyses de campagnes publicitaires.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">J'ai compris que le positionnement doit être cohérent avec la cible et le mix marketing. La comparaison Evian (premium, naturalité) vs Oreo (accessible, fun, communautaire) m'a montré deux stratégies de positionnement radicalement différentes.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">J'approfondirais l'analyse concurrentielle pour mieux comprendre pourquoi chaque marque choisit son positionnement par rapport à ses concurrents directs. J'ajouterais aussi des cartes de positionnement plus détaillées.</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC M.4 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC M.4</span>
+        <div><div class="ac-card-title">Concevoir une offre cohérente et éthique en termes de produits, de prix, de distribution et de communication</div><div class="ac-prof">Mme Laurent / Marketing</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 SAé Kitchen Daily S2 — mix marketing 4P complet</span>
+          <span class="preuve-chip">📎 ⚠️ 2ème preuve à compléter</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans le cadre de la SAé Kitchen Daily (S2), j'ai conçu une offre commerciale complète en travaillant sur les 4P : définition du produit, politique de prix, choix des canaux de distribution et stratégie de communication cohérente avec la cible et le positionnement.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Marketing sur le marketing mix (4P), les politiques produit, prix, distribution et communication. Cours sur l'éthique et la RSE dans le marketing.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">J'ai appris à construire une offre cohérente où chaque élément du mix marketing est en cohérence avec les autres et avec la cible visée. J'ai compris l'importance de l'éthique dans la conception d'une offre commerciale.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">J'ajouterais des données chiffrées plus précises (grille tarifaire, calcul de marge, plan de communication chiffré) pour rendre l'offre encore plus professionnelle et convaincante.</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC M.5 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC M.5</span>
+        <div><div class="ac-card-title">Réaliser un diagnostic avant la mise en place d'actions commerciales</div><div class="ac-prof">Mme Laurent / Marketing</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 SWOT Paré Gabia — diagnostic stratégique</span>
+          <span class="preuve-chip">📎 PESTEL Ridremont & Brosserie Nouvelle</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans un cas pratique en cours, j'ai réalisé un SWOT complet de l'entreprise Paré Gabia pour identifier ses forces, faiblesses, opportunités et menaces avant de proposer des actions commerciales. J'ai également réalisé une analyse PESTEL sur les entreprises Ridremont et Brosserie Nouvelle.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Marketing sur les outils de diagnostic stratégique (SWOT, PESTEL), données sectorielles, sites officiels des entreprises et articles de presse.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">J'ai appris à réaliser un diagnostic complet et à en tirer des recommandations d'actions commerciales concrètes. La complémentarité SWOT + PESTEL me permet d'avoir une vision à la fois interne et externe de la situation d'une entreprise.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">J'intégrerais une analyse des 5 forces de Porter pour compléter le diagnostic externe. Je chercherais aussi des données chiffrées plus précises pour appuyer chaque point du SWOT.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ==================== VENDRE ==================== -->
+<div id="vendre" class="vendre">
+  <div class="page-header">
+    <div class="page-header-bg"></div>
+    <div class="page-header-content">
+      <div class="page-badge">Compétence 2 · 7 AC</div>
+      <div class="page-big-title">Vendre</div>
+      <p class="page-subtitle">Préparer l'entretien de vente · Mme Laurent / Vente-Négociation</p>
+    </div>
+  </div>
+  <div class="ac-section vendre">
+    <!-- AC V.1 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC V.1</span>
+        <div><div class="ac-card-title">Préparer un plan de découverte qui permette de profiler le client et découvrir ses besoins</div><div class="ac-prof">Mme Laurent / Vente-Négociation</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Cas Spas — plan de découverte (B2C)</span>
+          <span class="preuve-chip">📎 Cas Culligan — plan de découverte seule (B2B)</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans un cas pratique réalisé en cours, j'ai élaboré deux plans de découverte pour des situations distinctes. Pour Sudance Spas (B2C), j'ai préparé des questions pour identifier les besoins d'un couple : usage, modèle, options, budget. Pour Culligan (B2B), réalisé seule, j'ai rédigé l'intégralité des questions orientées contraintes techniques. J'ai structuré mes questions en entonnoir selon le SONCASE. Cette expérience m'a appris qu'il faut bien connaître son produit pour poser des questions pertinentes — connaissance produit et découverte sont indissociables.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Vente-Négociation (fondamentaux de la vente : questionnement, écoute active, SONCASE). Fiches techniques des produits Spas et Culligan.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Mes plans de découverte m'ont permis de mener des entretiens structurés. Je me suis sentie à l'aise lors du jeu de rôle Spas. J'ai compris l'importance d'adapter son questionnement selon le contexte B2C ou B2B.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">Suite aux retours de mon enseignant, j'aurais formulé mes questions de manière plus ouverte pour laisser le client s'exprimer davantage. Je travaillerais aussi la phase de reformulation avant de passer à l'argumentation.</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC V.2 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC V.2</span>
+        <div><div class="ac-card-title">Concevoir un argumentaire de vente qui permette de proposer une solution adaptée aux besoins du client</div><div class="ac-prof">Mme Laurent / Vente-Négociation</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Casque Scorpion — tableau CAP-SONCASE (S1)</span>
+          <span class="preuve-chip">📎 Cas Spas — 4 argumentaires CAP-SONCASE (S2)</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">J'ai conçu plusieurs argumentaires CAP-SONCASE. Pour le casque Scorpion Exo (S1), j'ai construit un tableau centré sur le confort et la sécurité. Pour Sudance Spas (S2), j'ai réalisé 4 argumentaires distincts : entreprise, agence Tassin, et deux modèles à 16 000€ et 28 000€, chacun adapté aux motivations SONCASE détectées lors de la découverte.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Vente-Négociation (méthode CAP : Caractéristique-Avantage-Preuve, grille SONCASE). Fiches techniques des produits et site web Sudance Spas.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Progression visible entre le S1 (produit simple) et le S2 (multi-produits, multi-gammes). J'ai compris qu'il faut sélectionner les arguments selon le SONCASE dominant du client et non pas tous les lister.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">Suite aux retours de mon enseignant, je reformulerais les avantages du point de vue client avec "vous bénéficiez de..." plutôt que de décrire la caractéristique. L'avantage doit toujours parler au client directement.</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC V.3 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC V.3</span>
+        <div><div class="ac-card-title">Concevoir des OAV efficaces (Outils d'Aide à la Vente)</div><div class="ac-prof">Mme Laurent / Vente-Négociation</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Tableaux CAP Culligan (utilisés pendant l'entretien)</span>
+          <span class="preuve-chip">📎 Script Chocolats du Cœur (guide entretien complet)</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">J'ai conçu des outils d'aide à la vente utilisés directement pendant mes entretiens. Pour Culligan, j'avais deux tableaux CAP sous les yeux : un sur le produit (15 arguments) et un sur l'entreprise. Pour Chocolats du Cœur, j'ai rédigé un script complet incluant prise de contact, découverte SONCASE, reformulation et traitement de 3 types d'objections.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Vente-Négociation (construction de l'argumentaire, étapes de l'entretien, traitement des objections : technique AIR). Fiches techniques Culligan et contexte SAé Chocolats du Cœur.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">J'ai compris la distinction entre argumentaire (préparation) et OAV (outil opérationnel utilisé en entretien). Retours positifs du prof. Mes OAV couvrent toutes les étapes de l'entretien de vente.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">Je rendrais mes OAV plus visuels et synthétiques — une fiche résumé d'une page par produit serait plus efficace qu'un long tableau lors d'un vrai entretien commercial.</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC V.4 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC V.4</span>
+        <div><div class="ac-card-title">Évaluer la performance commerciale au moyen d'indicateurs</div><div class="ac-prof">Mme Laurent / Marketing · Stage Ortho-Primo</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Cas Carloni — PDM, taux d'évolution, taux de fidélité</span>
+          <span class="preuve-chip">📎 Stage Ortho-Primo — observation service commercial</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans un cas pratique en cours, j'ai calculé et analysé plusieurs indicateurs de performance commerciale pour l'entreprise Carloni : PDM (de 25% à 17,87% en 5 ans), taux d'évolution des ventes (-10,67%), taux de fidélité (de 33,33% à 10%). J'ai également observé les outils de suivi de performance lors de mon stage chez Ortho-Primo.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Marketing sur les indicateurs de performance (PDM, taux d'évolution, fidélité). Outils de calcul et tableaux Excel observés lors du stage Ortho-Primo.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Carloni = indicateurs calculés en cours (théorie). Ortho-Primo = indicateurs observés en entreprise réelle (pratique). Cette progression théorie → pratique montre une vraie compréhension des enjeux de la performance commerciale.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">J'utiliserais des graphiques pour visualiser l'évolution des indicateurs. Lors du stage, j'aurais demandé à manipuler directement les tableaux de bord plutôt que de seulement les observer.</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC V.5 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC V.5</span>
+        <div><div class="ac-card-title">Recourir aux techniques adaptées à la démarche de prospection</div><div class="ac-prof">Mme Selo / Prospection</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Tableau Pollutec — prospection terrain (12 entreprises)</span>
+          <span class="preuve-chip">📎 Tableau stage + CV + LM — prospection à distance</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">J'ai mené deux démarches de prospection avec des techniques différentes. Au salon Pollutec, j'ai abordé directement 12 entreprises internationales pour recueillir des informations sur leurs politiques de recrutement. Pour ma recherche de stage, j'ai constitué seule un fichier de 7 entreprises, rédigé des LM personnalisées et effectué des relances. J'ai obtenu mon stage chez Ortho-Primo.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Selo / Prospection (techniques de prise de contact, personnalisation des messages). Cours de Mme Lapierre / PPP (rédaction CV et LM professionnels).</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Deux techniques complémentaires maîtrisées : terrain (Pollutec) et à distance (stage). Gain en aisance sur la prise de contact directe. Résultat concret : obtention du stage Ortho-Primo.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">Je préparerai un script structuré avant Pollutec. Je commencerai la recherche de stage plus tôt et personnaliserai encore plus chaque LM, car les messages les plus personnalisés obtenaient les meilleurs retours.</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC V.6 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC V.6</span>
+        <div><div class="ac-card-title">Recourir aux codes d'expression spécifiques et professionnels</div><div class="ac-prof">Mme Laurent / Vente-Négociation · Mme Lapierre / PPP</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Script Spas + photos tenue professionnelle</span>
+          <span class="preuve-chip">📎 Enquête métier Klesia — interview technico-commerciale</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">À l'oral, dans le jeu de rôle Sudance Spas, j'ai joué le rôle d'Eva Chabert technico-commerciale : prise de contact professionnelle, remise de carte de visite, vocabulaire commercial adapté, tenue vestimentaire soignée. Pour l'enquête métier Klesia, j'ai interviewé une technico-commerciale en respectant les codes d'une interview professionnelle structurée.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Vente-Négociation (qualités du commercial, posture professionnelle). Cours de Mme Lapierre / PPP (codes d'expression professionnelle, préparation d'interview).</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Jeu de rôle = codes oraux en situation de vente simulée. Enquête Klesia = codes professionnels lors d'une interview structurée d'un professionnel en entreprise. Double compétence oral et gestion de l'entretien professionnel.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">J'étais un peu stressée à l'oral → je m'entraînerais davantage en répétant le script avec un camarade et m'enregistrerais en vidéo pour analyser ma posture et ma gestuelle à froid.</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC V.7 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC V.7</span>
+        <div><div class="ac-card-title">Adapter l'offre à une demande client</div><div class="ac-prof">Mme Laurent / Vente-Négociation</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Cas Chocolats du Cœur — traitement d'objections en direct</span>
+          <span class="preuve-chip">📎 Cas Weber — 3 argumentaires (électrique, charbon, gaz)</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Pour les Chocolats du Cœur, j'ai traité les objections du client Mercier en temps réel et adapté ma proposition : emballages prêts à offrir, aide au calcul des quantités, sélection personnalisée. Pour Weber, j'ai préparé en amont 3 argumentaires sur 3 types de barbecues (électrique, charbon, gaz) pour couvrir différents profils clients.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Vente-Négociation (traitement des objections : technique AIR, concession avec contrepartie, gagnant-gagnant). Fiches produits Weber pour construire les 3 argumentaires.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Adaptation réactive (Chocolats, objections en direct) et proactive (Weber, 3 niveaux préparés). J'ai compris que vendre = proposer la bonne solution, pas une solution standard.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">J'avais du mal à improviser face aux objections → je préparerai des réponses types pour les objections les plus courantes. J'approfondirais la technique de concession avec contrepartie systématique.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ==================== COMMUNIQUER ==================== -->
+<div id="communiquer" class="communiquer">
+  <div class="page-header">
+    <div class="page-header-bg"></div>
+    <div class="page-header-content">
+      <div class="page-badge">Compétence 3 · 5 AC</div>
+      <div class="page-big-title">Communiquer</div>
+      <p class="page-subtitle">Structurer un plan de communication · Mme Selo / Communication commerciale</p>
+    </div>
+  </div>
+  <div class="ac-section communiquer">
+    <!-- AC C.1 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC C.1</span>
+        <div><div class="ac-card-title">Identifier les cibles et objectifs de communication en tenant compte de la cohérence du mix</div><div class="ac-prof">M. Flamant / Communication</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Plaquette IUT — cible parents, objectif rassurant</span>
+          <span class="preuve-chip">📎 Storyboard vidéo — cible étudiants, objectif séduire</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans le cadre d'un projet de communication pour l'IUT, j'ai conçu deux supports aux cibles et objectifs opposés sur le même sujet (BUT TCSI). La plaquette visait à rassurer les parents (cible : adultes, objectif : cognitif et conatif — donner confiance et déclencher l'inscription). Le storyboard vidéo visait à séduire les futurs étudiants (cible : 17-20 ans, objectif : affectif — créer l'envie).</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de M. Flamant / Communication et cours de Mme Selo / Communication commerciale (objectifs cognitifs, affectifs, conatifs, méthode AIDA). Analyse de supports de communication existants.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">J'ai appris à adapter radicalement le message, le ton et le format selon la cible. Une même information (le BUT TCSI) peut être communiquée de façon complètement différente selon qu'on s'adresse à des parents ou à des lycéens.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">Je réaliserais un test utilisateur avant de finaliser chaque support pour vérifier que le message est bien perçu par la cible visée. J'affinerais aussi les objectifs de communication en les rendant plus mesurables.</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC C.2 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC C.2</span>
+        <div><div class="ac-card-title">Analyser de manière pertinente les moyens de communication commerciale (médias, hors médias, médias sociaux)</div><div class="ac-prof">Prof Culture Communication · Mme Selo / Communication</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Affiche Dior Eau Sauvage — analyse média traditionnel</span>
+          <span class="preuve-chip">📎 Cas Oreo — analyse communication multicanale</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">En cours de Culture Communication, j'ai analysé l'affiche Dior Eau Sauvage (collaboration avec le personnage Corto Maltese) : message véhiculé, levier émotionnel (masculinité, aventure, sauvagerie), choix du média print et impact visuel. Pour Oreo, j'ai analysé la stratégie multicanale : médias sociaux, mass médias, événements, échantillons.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Culture Communication (analyse sémiologique d'une affiche, média vs hors média). Cours de Mme Selo / Communication commerciale (distinction médias, hors médias, médias sociaux, critères de choix des canaux).</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Deux angles complémentaires : analyse d'une affiche print (média traditionnel, impact visuel fort) et analyse multicanale d'une marque grand public (cohérence entre les canaux). J'ai compris que le choix du canal doit être cohérent avec la cible et le message.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">J'enrichirais l'analyse Dior en comparant avec une campagne digitale complémentaire pour étudier la cohérence globale. Pour Oreo, j'ajouterais des données chiffrées (taux d'engagement, portée des campagnes).</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC C.3 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC C.3</span>
+        <div><div class="ac-card-title">Élaborer des supports simples (ISA, affiches, dossier de sponsoring…)</div><div class="ac-prof">M. Flamant / Communication</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Site web Alliance Consulting (support digital complet)</span>
+          <span class="preuve-chip">📎 Emails de prospection Alliance Consulting</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans le cadre du Projet 2026 (start-up Alliance Consulting, upcycling d'instruments de musique), j'ai créé un site e-commerce complet présentant notre entreprise, notre équipe, nos partenaires et notre catalogue. J'ai également rédigé des emails de prospection personnalisés pour trouver des partenaires entreprises, en adaptant le message à chaque destinataire.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de M. Flamant / Communication pour la conception du site et des emails. Cours de Mme Selo / Communication commerciale sur les codes de l'écrit professionnel. Outils : Vercel pour l'hébergement du site.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Deux supports de natures différentes : un site web opérationnel (alliance-consulting.vercel.app) et des emails de prospection professionnels. Le site est complet avec estimateur de devis, présentation de l'équipe et des partenaires.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">J'ajouterais un formulaire de contact plus visible sur le site et je rendrais les emails encore plus personnalisés selon le profil de chaque entreprise ciblée.</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC C.4 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC C.4</span>
+        <div><div class="ac-card-title">Analyser les indicateurs post campagne (impact, efficacité)</div><div class="ac-prof">M. Flamant / Communication</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 Stats site Alliance Consulting (fréquentation)</span>
+          <span class="preuve-chip">📎 ⚠️ 2ème preuve à compléter</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans le cadre du Projet 2026, j'ai analysé les statistiques de fréquentation du site e-commerce Alliance Consulting : nombre de visiteurs, pages les plus consultées, temps passé sur le site. Cette analyse m'a permis d'évaluer l'efficacité de notre communication digitale et d'identifier les axes d'amélioration.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de M. Flamant / Communication sur les indicateurs de performance digitale. Outils d'analyse intégrés à Vercel pour les statistiques de fréquentation du site.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">J'ai appris à lire et interpréter des indicateurs de performance d'une campagne de communication digitale pour en évaluer l'impact et formuler des recommandations d'amélioration.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">Je mettrais en place un suivi d'indicateurs dès le lancement du site pour avoir des données comparatives sur la durée. J'ajouterais aussi des indicateurs qualitatifs (satisfaction visiteurs).</div></div>
+        </div>
+      </div>
+    </div>
+    <!-- AC C.5 -->
+    <div class="ac-card">
+      <div class="ac-card-header">
+        <span class="ac-badge">AC C.5</span>
+        <div><div class="ac-card-title">Utiliser les outils de communication adaptés au domaine technique du client</div><div class="ac-prof">Mme Selo / Communication · Mme Laurent / Marketing</div></div>
+      </div>
+      <div class="ac-card-body">
+        <div class="ac-preuves">
+          <span class="preuve-chip">📎 ⚠️ Preuve 1 à compléter</span>
+          <span class="preuve-chip">📎 ⚠️ Preuve 2 à compléter</span>
+        </div>
+        <div class="ac-points">
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">⚠️ À compléter</div></div>
+          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">⚠️ À compléter</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">⚠️ À compléter</div></div>
+          <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">⚠️ À compléter</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ==================== CONCLUSION ==================== -->
+<div id="conclusion">
+  <div class="conclusion-hero">
+    <div class="section-label">Pour aller plus loin</div>
+    <div class="conclusion-title">Conclusion & Perspectives</div>
+    <p class="conclusion-text">Cette première année de BUT TCSI m'a permis d'acquérir des compétences commerciales concrètes à travers des cas pratiques, des jeux de rôle, des projets collectifs et une immersion en entreprise. J'ai appris à analyser un marché, construire une argumentation, prospecter, communiquer professionnellement et travailler en équipe sur des projets réels. Ce portfolio est le reflet de ma progression et de mon engagement tout au long de cette année.</p>
+    <div class="perspective-grid">
+      <div class="perspective-card">
+        <div class="perspective-emoji">🎓</div>
+        <div class="perspective-title">BUT 2 — Alternance</div>
+        <div class="perspective-text">Je souhaite poursuivre en alternance pour conjuguer formation et expérience professionnelle dès septembre 2026.</div>
+      </div>
+      <div class="perspective-card">
+        <div class="perspective-emoji">🌍</div>
+        <div class="perspective-title">Commerce International</div>
+        <div class="perspective-text">Mon goût pour les langues étrangères (anglais courant, italien en cours) me pousse vers des débouchés à l'international.</div>
+      </div>
+      <div class="perspective-card">
+        <div class="perspective-emoji">⚙️</div>
+        <div class="perspective-title">Technico-commerciale</div>
+        <div class="perspective-text">Le métier de technico-commerciale, alliant expertise technique et compétences commerciales, correspond parfaitement à ma formation.</div>
+      </div>
+      <div class="perspective-card">
+        <div class="perspective-emoji">🚀</div>
+        <div class="perspective-title">Entrepreneuriat</div>
+        <div class="perspective-text">Le Projet Alliance Consulting m'a donné le goût de l'entrepreneuriat et de la création de valeur à partir d'idées innovantes.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">E · C</div>
+  <p>Eva Chabert · BUT TCSI · IUT Lyon 1 · 2025–2026</p>
+</footer>
+
+</body>
+</html>
