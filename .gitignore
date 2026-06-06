@@ -5,3 +5,7 @@ node_modules/
 .env.local
 # PDFs stats (données privées — ne pas publier)
 *.pdf
+# Vidéos (trop lourdes pour git — héberger sur YouTube puis intégrer en iframe)
+*.mp4
+*.mov
+*.avi

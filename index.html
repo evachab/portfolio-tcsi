@@ -166,6 +166,17 @@ footer{text-align:center;padding:3rem 2rem;background:var(--dark);color:rgba(255
 .footer-logo{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;background:linear-gradient(135deg,var(--rose),var(--orange),var(--jaune));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;letter-spacing:4px}
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
 
+/* ÉPURÉ — typographie */
+strong { font-weight: 700; color: var(--dark); }
+.ac-point-text strong { color: var(--rose); }
+.ac-point-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #bbb; margin-bottom: 5px; }
+.section-label::before { content: ''; display: inline-block; width: 18px; height: 2px; background: var(--rose); vertical-align: middle; margin-right: 8px; border-radius: 2px; }
+
+/* VIDÉO SAE */
+.video-wrap { border-radius: 20px; overflow: hidden; border: 1.5px solid rgba(247,37,133,0.15); background: #000; max-height: 520px; display: flex; align-items: center; justify-content: center; }
+.video-wrap video { width: 100%; max-height: 520px; display: block; }
+.video-placeholder { width: 100%; padding: 4rem 2rem; text-align: center; background: linear-gradient(135deg, rgba(247,37,133,0.06), rgba(244,128,42,0.04)); border-radius: 20px; border: 1.5px dashed rgba(247,37,133,0.2); }
+
 /* FORMULAIRE CONTACT */
 .contact-form { margin-top: 2rem; display: grid; gap: 14px; }
 .contact-form input, .contact-form textarea {
@@ -229,7 +240,7 @@ footer{text-align:center;padding:3rem 2rem;background:var(--dark);color:rgba(255
       <span>P</span><span>&nbsp;</span><span>O</span><span>&nbsp;</span><span>R</span><span>&nbsp;</span><span>T</span><span>&nbsp;</span><span>F</span><span>&nbsp;</span><span>O</span><span>&nbsp;</span><span>L</span><span>&nbsp;</span><span>I</span><span>&nbsp;</span><span>O</span>
     </h1>
     <div class="hero-name">Eva Chabert</div>
-    <p class="hero-desc">Étudiante en 1ère année de BUT Techniques de Commercialisation des Systèmes Industriels · IUT Lyon 1, site Gratte-Ciel, Villeurbanne</p>
+    <p class="hero-desc">Étudiante en 1ère année de <strong>BUT TCSI</strong> · <strong>IUT Lyon 1</strong>, Villeurbanne</p>
     <div class="hero-pills">
       <span class="pill pill-rose">🎯 Marketer</span>
       <span class="pill pill-orange">💼 Vendre</span>
@@ -334,9 +345,8 @@ footer{text-align:center;padding:3rem 2rem;background:var(--dark);color:rgba(255
           <span class="preuve-chip">📎 Diagnostic Monin (B2C, cours management)</span>
         </div>
         <div class="ac-points">
-          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">J'ai réalisé deux diagnostics externes complets sur des entreprises de secteurs différents. Pour ABB (B2B, robotique industrielle), j'ai produit en groupe une analyse PESTEL complète, une étude de la concurrence (Siemens, Schneider, Emerson), une analyse de la demande et un SWOT. Pour Monin (B2C), j'ai analysé l'environnement de l'entreprise en cours de management.</div></div>
-          <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Marketing (méthodes PESTEL, SWOT, 5 forces de Porter), recherches sur internet, rapports annuels d'entreprises, site officiel d'ABB, articles de presse spécialisée.</div></div>
-          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Deux diagnostics complets et structurés couvrant des contextes B2B et B2C. Pour ABB, j'ai compris les enjeux de la transition énergétique et de la digitalisation industrielle. La diversité des contextes démontre mon adaptabilité analytique.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Deux diagnostics externes complets : <strong>ABB</strong> (B2B, robotique industrielle) — analyse <strong>PESTEL</strong>, étude concurrence (<strong>Siemens, Schneider, Emerson</strong>), <strong>SWOT</strong> complet. <strong>Monin</strong> (B2C) — analyse de l'environnement en management.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Deux diagnostics couvrant des contextes <strong>B2B et B2C</strong>. Compréhension des enjeux de la <strong>transition énergétique</strong> et de la <strong>digitalisation industrielle</strong>.</div></div>
           <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">J'intégrerais davantage de données chiffrées pour enrichir l'analyse, et je commencerais par une analyse macro avant de zoomer sur l'entreprise. J'utiliserais aussi des sources sectorielles plus spécialisées.</div></div>
         </div>
       </div>
@@ -483,7 +493,7 @@ footer{text-align:center;padding:3rem 2rem;background:var(--dark);color:rgba(255
           <span class="preuve-chip">📎 Script Chocolats du Cœur (guide entretien complet)</span>
         </div>
         <div class="ac-points">
-          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">J'ai conçu des outils d'aide à la vente utilisés directement pendant mes entretiens. Pour Culligan, j'avais deux tableaux CAP sous les yeux : un sur le produit (15 arguments) et un sur l'entreprise. Pour Chocolats du Cœur, j'ai rédigé un script complet incluant prise de contact, découverte SONCASE, reformulation et traitement de 3 types d'objections.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text"><strong>Culligan</strong> — tableaux <strong>CAP</strong> : <strong>15 arguments</strong> produit + 1 sur l'entreprise, utilisés en entretien réel. <strong>Chocolats du Cœur</strong> — script complet : prise de contact, découverte <strong>SONCASE</strong>, reformulation, traitement de <strong>3 types d'objections</strong>.</div></div>
           <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Vente-Négociation (construction de l'argumentaire, étapes de l'entretien, traitement des objections : technique AIR). Fiches techniques Culligan et contexte SAé Chocolats du Cœur.</div></div>
           <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">J'ai compris la distinction entre argumentaire (préparation) et OAV (outil opérationnel utilisé en entretien). Retours positifs du prof. Mes OAV couvrent toutes les étapes de l'entretien de vente.</div></div>
           <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">Je rendrais mes OAV plus visuels et synthétiques — une fiche résumé d'une page par produit serait plus efficace qu'un long tableau lors d'un vrai entretien commercial.</div></div>
@@ -502,7 +512,7 @@ footer{text-align:center;padding:3rem 2rem;background:var(--dark);color:rgba(255
           <span class="preuve-chip">📎 Stage Ortho-Primo — observation service commercial</span>
         </div>
         <div class="ac-points">
-          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans un cas pratique en cours, j'ai calculé et analysé plusieurs indicateurs de performance commerciale pour l'entreprise Carloni : PDM (de 25% à 17,87% en 5 ans), taux d'évolution des ventes (-10,67%), taux de fidélité (de 33,33% à 10%). J'ai également observé les outils de suivi de performance lors de mon stage chez Ortho-Primo.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Analyse <strong>Carloni</strong> : PDM passée de <strong>25% à 17,87%</strong> en 5 ans, taux d'évolution des ventes <strong>−10,67%</strong>, taux de fidélité de <strong>33,33% à 10%</strong>. Observation des outils de suivi lors de mon stage chez <strong>Ortho-Primo</strong>.</div></div>
           <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Laurent / Marketing sur les indicateurs de performance (PDM, taux d'évolution, fidélité). Outils de calcul et tableaux Excel observés lors du stage Ortho-Primo.</div></div>
           <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Carloni = indicateurs calculés en cours (théorie). Ortho-Primo = indicateurs observés en entreprise réelle (pratique). Cette progression théorie → pratique montre une vraie compréhension des enjeux de la performance commerciale.</div></div>
           <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">J'utiliserais des graphiques pour visualiser l'évolution des indicateurs. Lors du stage, j'aurais demandé à manipuler directement les tableaux de bord plutôt que de seulement les observer.</div></div>
@@ -521,7 +531,7 @@ footer{text-align:center;padding:3rem 2rem;background:var(--dark);color:rgba(255
           <span class="preuve-chip">📎 Tableau stage + CV + LM — prospection à distance</span>
         </div>
         <div class="ac-points">
-          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">J'ai mené deux démarches de prospection avec des techniques différentes. Au salon Pollutec, j'ai abordé directement 12 entreprises internationales pour recueillir des informations sur leurs politiques de recrutement. Pour ma recherche de stage, j'ai constitué seule un fichier de 7 entreprises, rédigé des LM personnalisées et effectué des relances. J'ai obtenu mon stage chez Ortho-Primo.</div></div>
+          <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Salon <strong>Pollutec</strong> — prospection terrain : <strong>12 entreprises internationales</strong> abordées directement. Recherche de stage : fichier de <strong>7 entreprises</strong>, LM personnalisées, relances — <strong>stage décroché chez Ortho-Primo</strong>.</div></div>
           <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Cours de Mme Selo / Prospection (techniques de prise de contact, personnalisation des messages). Cours de Mme Lapierre / PPP (rédaction CV et LM professionnels).</div></div>
           <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Deux techniques complémentaires maîtrisées : terrain (Pollutec) et à distance (stage). Gain en aisance sur la prise de contact directe. Résultat concret : obtention du stage Ortho-Primo.</div></div>
           <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">Je préparerai un script structuré avant Pollutec. Je commencerai la recherche de stage plus tôt et personnaliserai encore plus chaque LM, car les messages les plus personnalisés obtenaient les meilleurs retours.</div></div>
@@ -697,12 +707,26 @@ footer{text-align:center;padding:3rem 2rem;background:var(--dark);color:rgba(255
 
 <div class="divider"></div>
 
+<!-- ==================== VIDÉO SAE ==================== -->
+<section style="max-width:900px;margin:0 auto;padding:4rem 2.5rem">
+  <div class="section-label">SAé Projet</div>
+  <h2 class="section-title" style="margin-bottom:1.5rem">Vidéo de projet</h2>
+  <div class="video-wrap">
+    <video controls preload="metadata" style="width:100%;max-height:520px;display:block"
+           onerror="this.closest('.video-wrap').innerHTML='<div class=\'video-placeholder\'><p style=\'font-size:13px;color:#999\'>Vidéo disponible en local — pour la mettre en ligne, <strong>upload sur YouTube</strong> puis remplace cette balise par l\'iframe YouTube.</p></div>'">
+      <source src="/sae.mp4" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- ==================== CONCLUSION ==================== -->
 <div id="conclusion">
   <div class="conclusion-hero">
     <div class="section-label">Pour aller plus loin</div>
     <div class="conclusion-title">Conclusion & Perspectives</div>
-    <p class="conclusion-text">Cette première année de BUT TCSI m'a permis d'acquérir des compétences commerciales concrètes à travers des cas pratiques, des jeux de rôle, des projets collectifs et une immersion en entreprise. J'ai appris à analyser un marché, construire une argumentation, prospecter, communiquer professionnellement et travailler en équipe sur des projets réels. Ce portfolio est le reflet de ma progression et de mon engagement tout au long de cette année.</p>
+    <p class="conclusion-text">Cette première année de BUT TCSI m'a permis d'acquérir <strong>des compétences commerciales concrètes</strong> à travers des cas pratiques, des jeux de rôle, des projets collectifs et <strong>une immersion en entreprise</strong>. J'ai appris à <strong>analyser un marché</strong>, construire une argumentation, prospecter, <strong>communiquer professionnellement</strong> et travailler en équipe sur des projets réels.</p>
     <div class="perspective-grid">
       <div class="perspective-card">
         <div class="perspective-emoji">🎓</div>
