@@ -1,0 +1,9 @@
+{
+  "name": "portfolio-eva-chabert",
+  "version": "1.0.0",
+  "private": true,
+  "engines": { "node": "20.x" },
+  "dependencies": {
+    "resend": "^3.2.0"
+  }
+}
