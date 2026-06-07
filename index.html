@@ -110,7 +110,8 @@ section { padding: 5rem 2.5rem; max-width: 1100px; margin: 0 auto; }
 .ac-prof { font-size: 11px; font-style: italic; margin-top: 4px; }
 .ac-card-body { padding: 0 2rem 1.5rem; }
 .ac-preuves { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
-.preuve-chip { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 500; padding: 5px 12px; border-radius: 20px; }
+.preuve-chip { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 500; padding: 5px 12px; border-radius: 20px; text-decoration: none; transition: all 0.2s; }
+a.preuve-chip:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); filter: brightness(0.95); }
 .ac-points { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 12px; }
 .ac-point { padding: 1rem; border-radius: 12px; background: #FAFAFA; border-left: 3px solid; }
 .ac-point-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 6px; }
@@ -369,8 +370,9 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Diagnostic ABB — PESTEL + SWOT (B2B)</span>
-          <span class="preuve-chip">📎 Diagnostic Monin (B2C, cours management)</span>
+          <a class="preuve-chip" href="preuves/preuve%20AC%20M1.pdf" target="_blank">📎 Diagnostic ABB — PESTEL + SWOT (B2B)</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20AC%20M1.pdf" target="_blank">📎 Diagnostic Monin — Forces & Faiblesses</a>
+          <a class="preuve-chip" href="preuves/Preuve%203%20AC%20M1.pdf" target="_blank">📎 Diagnostic Monin — Opportunités & Menaces</a>
         </div>
         <div class="ac-preuve-photos" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:14px 0">
           <div style="border-radius:14px;overflow:hidden;border:1.5px solid rgba(0,0,0,0.06);background:#fafafa;display:flex;align-items:center;justify-content:center;height:170px">
@@ -399,8 +401,9 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Cas cosmétique — étude quantitative marché beauté</span>
-          <span class="preuve-chip">📎 SAé Kitchen Daily — étude de marché complète</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20AC%20M2.pdf" target="_blank">📎 Cas cosmétique — étude quantitative marché beauté</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20ACM2.pdf" target="_blank">📎 SAé Kitchen Daily — étude de marché (segmentation & cible)</a>
+          <a class="preuve-chip" href="preuves/preuve%203%20ACM2.pdf" target="_blank">📎 SAé Kitchen Daily — étude de marché (concurrence)</a>
         </div>
         <div class="ac-preuve-photos" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:14px 0">
           <div style="border-radius:14px;overflow:hidden;border:1.5px solid rgba(0,0,0,0.06);background:#fafafa;display:flex;align-items:center;justify-content:center;height:170px">
@@ -429,8 +432,9 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Cas Evian — positionnement + mix marketing</span>
-          <span class="preuve-chip">📎 Cas Oreo — segmentation + ciblage multicanal</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACM3.pdf" target="_blank">📎 Cas Evian — positionnement + mix marketing</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20ACM3.pdf" target="_blank">📎 Cas Oreo — segmentation + ciblage (campagnes)</a>
+          <a class="preuve-chip" href="preuves/preuve%203%20ACM3.pdf" target="_blank">📎 Cas Oreo — segmentation + ciblage (outils)</a>
         </div>
         <div class="ac-preuve-photos" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:14px 0">
           <div style="border-radius:14px;overflow:hidden;border:1.5px solid rgba(0,0,0,0.06);background:#fafafa;display:flex;align-items:center;justify-content:center;height:170px">
@@ -459,8 +463,8 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Oral Kitchen Daily — mix marketing 4P complet</span>
-          <span class="preuve-chip">📎 Exposé Ridremont & Brosserie Nouvelle — mix marketing B2B</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACM4.pdf" target="_blank">📎 Oral Kitchen Daily — mix marketing 4P complet</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20ACM4.pdf" target="_blank">📎 Exposé Ridremont & Brosserie Nouvelle — mix marketing B2B</a>
         </div>
         <div class="ac-preuve-photos" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
           <div style="border-radius:14px;overflow:hidden;border:1.5px solid rgba(0,0,0,0.06);background:#fafafa;display:flex;align-items:center;justify-content:center;height:200px">
@@ -486,8 +490,8 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 SWOT Paré Gabia — diagnostic stratégique</span>
-          <span class="preuve-chip">📎 PESTEL Ridremont & Brosserie Nouvelle</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACM5.pdf" target="_blank">📎 SWOT Paré Gabia — diagnostic stratégique</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20ACM5.pdf" target="_blank">📎 PESTEL Ridremont & Brosserie Nouvelle</a>
         </div>
         <div class="ac-preuve-photos" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0">
           <div style="border-radius:14px;overflow:hidden;border:1.5px solid rgba(0,0,0,0.06);background:#fafafa;display:flex;align-items:center;justify-content:center;height:200px">
@@ -529,8 +533,8 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Cas Spas — plan de découverte (B2C)</span>
-          <span class="preuve-chip">📎 Cas Culligan — plan de découverte seule (B2B)</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACV1.pdf" target="_blank">📎 Cas Spas — plan de découverte (B2C)</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20ACV1.pdf" target="_blank">📎 Cas Culligan — plan de découverte seule (B2B)</a>
         </div>
         <div class="ac-points">
           <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans le cadre de mes cours de vente, j'ai préparé des plans de découverte pour des situations professionnelles très différentes. Pour le cas <strong>Sudance Spas</strong>, j'ai élaboré une série de questions permettant d'identifier les besoins du client souhaitant acquérir un spa : nombre de places, type d'usage, préférences de massage, options souhaitées comme la bâche, le SMARTUB ou la stéréo, contraintes de livraison et budget. J'ai structuré mes questions en entonnoir pour aller du général au particulier, en m'appuyant sur les motivations <strong>SONCASE</strong> du client pour orienter ensuite mon argumentaire. Pour le cas <strong>Culligan</strong>, j'ai conçu un plan de découverte orienté B2B cette fois avec des contraintes d'hygiène et de sécurité, des dimensions, le niveau sonore, l’alimentation électrique, le nombre de fontaines souhaitées et l'emplacement. Ce que ces deux exercices m'ont vraiment appris, c'est qu'on ne peut pas poser de bonnes questions sans maîtriser son produit, la connaissance produit et la découverte des besoins sont totalement indissociables.</div></div>
@@ -548,8 +552,9 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Casque Scorpion — tableau CAP-SONCASE (S1)</span>
-          <span class="preuve-chip">📎 Cas Spas — 4 argumentaires CAP-SONCASE (S2)</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACV2.pdf" target="_blank">📎 Casque Scorpion — tableau CAP-SONCASE (S1)</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20ACV2.pdf" target="_blank">📎 Cas Spas — 4 argumentaires CAP-SONCASE (S2)</a>
+          <a class="preuve-chip" href="preuves/preuve%203%20ACV2.pdf" target="_blank">📎 Cas Spas — Argumentaire détaillé</a>
         </div>
         <div class="ac-points">
           <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans le cadre de mes cours de vente, j'ai conçu plusieurs argumentaires <strong>CAP-SONCASE</strong> adaptés à des situations commerciales différentes. Pour le casque <strong>Scorpion Exo</strong>, mon premier exercice d'argumentaire en <strong>S1</strong>, j'ai construit un tableau complet centré sur le confort et la sécurité : poids léger en carbone, visière grande visibilité 120°, aérations modulables, mousse intérieure et garantie 24 mois, avec une preuve concrète pour chaque argument. Pour le cas <strong>Sudance Spas</strong> en <strong>S2</strong>, j'ai réalisé quatre argumentaires distincts, un sur l'entreprise, un sur l'agence de Tassin, et deux sur des modèles de spas à des niveaux de prix différents (16 000€ et 28 000€), chacun construit selon les motivations <strong>SONCASE</strong> détectées lors de la découverte. Ce que j'ai vraiment appris à travers ces exercices, c'est qu'un bon argumentaire ne consiste pas à tout lister : il faut sélectionner les arguments qui résonnent avec le profil du client, et seulement ceux-là.</div></div>
@@ -567,8 +572,8 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Tableaux CAP Culligan (utilisés pendant l'entretien)</span>
-          <span class="preuve-chip">📎 Script Chocolats du Cœur (guide entretien complet)</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACV3.pdf" target="_blank">📎 Tableaux CAP Culligan (utilisés pendant l'entretien)</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20ACV3.pdf" target="_blank">📎 Script Chocolats du Cœur (guide entretien complet)</a>
         </div>
         <div class="ac-points">
           <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans le cadre de mes cours de négociation, j'ai conçu plusieurs outils d'aide à la vente que j'utilisais directement pendant mes entretiens. Pour le cas <strong>Culligan</strong>, j'avais deux tableaux <strong>CAP</strong> sous les yeux pendant l'entretien : un premier sur le produit avec 15 arguments détaillés, et un second sur l'entreprise avec les certifications ISO, le SAV sous 48h et des références clients comme L'Oréal et France TV. Pour le cas <strong>Chocolats du Cœur</strong>, j'ai rédigé un script complet qui me guidait de A à Z : prise de contact, présentation de l'entreprise, questions de découverte <strong>SONCASE</strong>, reformulation et traitement des trois types d'objections. Au départ, la notion d'<strong>OAV</strong> était un peu floue pour moi, je la confondais avec l'argumentaire. C'est vraiment en pratiquant que tout s'est éclairci : l'argumentaire c'est ce qu'on prépare dans sa tête, l'<strong>OAV</strong> c'est ce qu'on a concrètement sous les yeux pendant l'entretien pour ne pas perdre le fil.</div></div>
@@ -586,8 +591,8 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Cas spiritueux — PDM, taux d'évolution, demande globale</span>
-          <span class="preuve-chip">📎 Stage Ortho-Primo — observation service commercial</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACV4.pdf" target="_blank">📎 Cas spiritueux — PDM, taux d'évolution, demande globale</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20ACV4.pdf" target="_blank">📎 Stage Ortho-Primo — observation service commercial</a>
         </div>
         <div class="ac-points">
           <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans le cadre de mes cours de marketing, j'ai travaillé sur un exercice d'analyse de la demande globale d'un marché, celui des <strong>spiritueux</strong>. J'ai calculé et interprété plusieurs indicateurs commerciaux clés : les taux d'évolution des <strong>whisky</strong> (+48,57%), du <strong>porto</strong> (-10,29%) et du punch (+5,17%), les <strong>parts de marché</strong> en volume et en valeur sur quatre années, ainsi que le marché potentiel d'un système d'alarme. J'ai également rédigé une synthèse analytique expliquant ce que ces résultats révèlent sur la santé du marché et les dynamiques par segment. En parallèle, lors de mon stage ouvrier d'un mois chez <strong>Ortho-Primo</strong> en janvier/février 2026, j'ai eu l'occasion d'observer le <strong>tableau de suivi clients</strong> du service commercial : il indiquait pour chaque patient si c'était sa première commande de gouttières dentaires, sa deuxième, et ainsi de suite. Cet outil permet à l'entreprise de mesurer la fidélité client et d'anticiper les commandes récurrentes, un indicateur de <strong>performance commerciale</strong> concret, utilisé en situation réelle.</div></div>
@@ -605,8 +610,10 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Tableau Pollutec — prospection terrain (12 entreprises)</span>
-          <span class="preuve-chip">📎 Tableau stage + CV + LM — prospection à distance</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACV5.pdf" target="_blank">📎 Tableau Pollutec — prospection terrain (12 entreprises)</a>
+          <a class="preuve-chip" href="preuves/Preuve%202%20ACV5.pdf" target="_blank">📎 Tableau stage + CV + LM — prospection à distance</a>
+          <a class="preuve-chip" href="preuves/preuve%203%20ACV5.pdf" target="_blank">📎 Fiche prospection — Ortho-Primo</a>
+          <a class="preuve-chip" href="preuves/preuve%204%20ACV5.pdf" target="_blank">📎 Relances et suivi de prospection</a>
         </div>
         <div class="ac-points">
           <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans le cadre de mes cours, j'ai mené deux démarches de <strong>prospection</strong> avec des techniques très différentes. Pour le salon <strong>Pollutec</strong>, réalisé en binôme avec Raphaël, j'ai abordé directement 12 entreprises internationales, françaises, canadiennes, turques, marocaines, chinoises, allemandes, pour recueillir des informations sur leurs politiques de recrutement : stages ouvriers, stages commerciaux, alternance. Pour chaque entreprise, j'ai noté dans un tableau de suivi la qualité de l'accueil, les possibilités de recrutement et les coordonnées des contacts. Pour ma recherche de stage ouvrier, j'ai mené une prospection à distance : j'ai constitué un fichier de 7 entreprises industrielles ciblées, rédigé des <strong>lettres de motivation</strong> personnalisées accompagnées de mon <strong>CV</strong>, effectué des relances et suivi l'ensemble de mes contacts dans un <strong>tableau de bord</strong>. Cette démarche m'a permis d'obtenir mon stage chez <strong>Ortho-Primo</strong>.</div></div>
@@ -624,8 +631,9 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Script Spas + photos tenue professionnelle</span>
-          <span class="preuve-chip">📎 Enquête métier Klesia — interview technico-commerciale</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACV6.pdf" target="_blank">📎 Script Spas + photos tenue professionnelle</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20ACV6.pdf" target="_blank">📎 Enquête métier Klesia — interview (Partie 1)</a>
+          <a class="preuve-chip" href="preuves/preuve%203%20ACV6.pdf" target="_blank">📎 Enquête métier Klesia — interview (Partie 2)</a>
         </div>
         <div class="ac-points">
           <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Tout au long de mon année, j'ai travaillé les <strong>codes d'expression professionnels</strong> à l'oral et à l'écrit dans deux contextes très différents. À l'oral, dans mon jeu de rôle <strong>Sudance Spas</strong>, j'ai joué le rôle d'<strong>Eva Chabert</strong>, <strong>technico-commerciale</strong> : prise de contact professionnelle, remise de carte de visite, présentation de l'entreprise, questionnement courtois et reformulation. J'ai aussi soigné ma tenue vestimentaire, sobre et professionnelle, avec mon classeur, pour être cohérente avec le rôle que j'incarnais. Pour l'enquête métier <strong>Klesia</strong>, réalisée en binôme avec Raphaël, j'ai préparé et conduit une interview d'une technico-commerciale en respectant les codes d'un entretien professionnel structuré : questions préparées en amont, langage adapté, respect des prises de parole et posture sérieuse tout au long de l'échange.</div></div>
@@ -643,8 +651,8 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Cas Chocolats du Cœur — traitement d'objections en direct</span>
-          <span class="preuve-chip">📎 Cas Spas — 3 argumentaires (niveaux de prix)</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACV7.pdf" target="_blank">📎 Cas Chocolats du Cœur — traitement d'objections en direct</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20ACV7.pdf" target="_blank">📎 Cas Spas — 3 argumentaires (niveaux de prix)</a>
         </div>
         <div class="ac-points">
           <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans le cadre de mes cours de vente, j'ai exercé ma capacité à adapter l'offre en temps réel dans deux contextes différents. Pour le cas <strong>Chocolats du Cœur</strong>, face aux objections du client Mercier, "on ne veut pas que ce soit trop compliqué à distribuer", "on ne sait pas combien commander", j'ai proposé des solutions concrètes et adaptées : emballages prêts à offrir, aide au calcul des quantités selon le nombre de salariés, sélection personnalisée selon les goûts. J'ai utilisé les trois types de traitement des <strong>objections</strong> vus en cours : non sincère, sincère non fondée et sincère fondée. Pour le cas <strong>Spas</strong>, j'avais préparé en amont trois argumentaires sur trois modèles à des niveaux de prix très différents, 16 000€, 28 000€ et 42 000€, chacun adapté à un profil client distinct, pour pouvoir proposer la bonne alternative selon le budget et les besoins exprimés lors de la découverte.</div></div>
@@ -678,8 +686,9 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Plaquette IUT — cible parents, objectif rassurant</span>
-          <span class="preuve-chip">📎 Storyboard vidéo — cible étudiants, objectif séduire</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACC1.pdf" target="_blank">📎 Plaquette IUT — cible parents, objectif rassurant</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20ACC1.pdf" target="_blank">📎 Storyboard vidéo — cible étudiants, objectif séduire</a>
+          <a class="preuve-chip" href="preuves/preuve%203%20ACC1.mp4" target="_blank">🎬 Vidéo finale du projet (mp4)</a>
         </div>
         <div class="ac-points">
           <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans le cadre de ma <strong>SAÉ Communication</strong>, j'ai dû concevoir deux supports sur le même sujet : le <strong>BUT TCSI</strong> de l'<strong>IUT Lyon 1 Claude Bernard</strong>, mais avec des cibles et des objectifs complètement différents. Pour la plaquette destinée aux parents, j'ai voulu quelque chose de rassurant et d'institutionnel. J'ai mis en avant les débouchés, le taux de réussite, l'encadrement pédagogique et les opportunités d'alternance. J'y ai aussi intégré un <strong>QR code</strong> renvoyant vers des infos complémentaires, un petit détail auquel je tenais vraiment parce que je voulais créer une vraie cohérence entre le print et le digital. J'ai recommencé la plaquette plusieurs fois pour qu'elle soit à la hauteur de ce que j'avais en tête. Pour le storyboard vidéo, réalisé en groupe, on est partis sur quelque chose de beaucoup plus dynamique et attractif, pensé pour séduire les futurs étudiants en leur montrant la vie à l'IUT et les projets concrets qu'on y fait. C'était vraiment une SAÉ que j'ai adorée, j'aime beaucoup travailler sur des supports créatifs et concrets.</div></div>
@@ -697,8 +706,10 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Cas Lidl — analyse stratégie média TV</span>
-          <span class="preuve-chip">📎 Cas Oreo — analyse communication multicanale</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACC2.pdf" target="_blank">📎 Cas Lidl — analyse stratégie média TV</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20ACC2.pdf" target="_blank">📎 Cas Oreo — analyse communication multicanale</a>
+          <a class="preuve-chip" href="preuves/preuve%203%20ACC2.pdf" target="_blank">📎 Analyse comparative de supports</a>
+          <a class="preuve-chip" href="preuves/preuve%204%20ACC2.pdf" target="_blank">📎 Synthèse de stratégie média</a>
         </div>
         <div class="ac-points">
           <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans un cas pratique réalisé en cours, je me suis penchée sur les stratégies de communication de deux marques très différentes. Pour <strong>Oreo</strong>, j'ai passé en revue l'ensemble de leurs outils : présence sur Instagram, X, YouTube, Snapchat, campagnes mass médias, événements, échantillons et activation en points de vente. Puis suite à une présentation orale sur <strong>Lidl</strong>, je suis allée plus loin dans l'analyse d'une stratégie média <strong>TV</strong> : parts de marché publicitaires, défi stratégique de la marque, sélectivité directe vs replay et ticket d'entrée. Ces deux cas m'ont permis d'explorer des approches vraiment opposées, d'un côté une stratégie multicanale très digitale, de l'autre une stratégie média traditionnelle centrée sur la <strong>TV</strong>.</div></div>
@@ -716,8 +727,7 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Site web Alliance Consulting (support digital complet)</span>
-          <span class="preuve-chip">📎 Emails de prospection Alliance Consulting</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACC3.pdf" target="_blank">📎 Site web & emails Alliance Consulting</a>
         </div>
         <div class="ac-points">
           <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans le cadre de notre projet de fin d'année <strong>Alliance Consulting</strong>, une start-up de cabinet de conseil qui soutient des entreprises et crée des instruments de musique à partir de matériaux récupérés, j'ai élaboré deux supports de communication distincts. J'ai créé le site e-commerce <strong>Alliance Consulting</strong> en utilisant <strong>Gemini</strong> pour générer le code HTML, <strong>GitHub</strong> pour gérer les fichiers et <strong>Antigravity</strong> pour le mettre en ligne. Le site présente notre entreprise, notre équipe, nos partenaires, notre catalogue et intègre un estimateur de devis. J'ai également rédigé de nombreux <strong>emails de prospection</strong> personnalisés, destinés à des entreprises partenaires potentielles et à des recruteurs dans le cadre de ma recherche d'alternance. Chaque email était soigneusement adapté au profil de l'entreprise contactée, c'est quelque chose auquel je tenais vraiment car j'avais compris que les messages génériques ne fonctionnent pas.</div></div>
@@ -725,7 +735,6 @@ strong { font-weight: 700; color: var(--dark); }
           <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Je suis vraiment fière du résultat. <strong>M. Maratier</strong> nous a suivis tout au long du projet et a salué positivement nos avancées. Le site est complet, professionnel et accessible en ligne à l'adresse alliance-consulting.vercel.app. Pour les <strong>emails de prospection</strong>, les réponses positives sont difficiles à obtenir mais j'ai réussi à décrocher un entretien grâce à l'un de mes messages, ce qui prouve que ma communication écrite a su convaincre.</div></div>
           <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
             <a href="https://alliance-consulting.vercel.app" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:linear-gradient(135deg,#F72585,#F4802A);color:white;border-radius:20px;font-size:12px;font-weight:600;text-decoration:none">🌐 Voir le site</a>
-            <a href="alliance-consulting.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border:1.5px solid rgba(247,37,133,0.3);color:#F72585;border-radius:20px;font-size:12px;font-weight:600;text-decoration:none;background:rgba(247,37,133,0.05)">📊 Voir les stats de trafic</a>
           </div>
           <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">Si c'était à refaire, pour le site, j'ajouterais un formulaire de contact plus visible et je travaillerais davantage le référencement pour améliorer sa visibilité en ligne. Pour les emails, je personnaliserais encore plus chaque message en mentionnant des éléments très spécifiques à chaque entreprise car j'ai bien vu que les emails les plus ciblés obtenaient les meilleurs retours. Je mettrais aussi en place des relances systématiques après chaque envoi, peut-être avec des mails programmés, car j'ai parfois laissé passer du temps sans relancer.</div></div>
         </div>
@@ -739,13 +748,16 @@ strong { font-weight: 700; color: var(--dark); }
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
-          <span class="preuve-chip">📎 Stats site Alliance Consulting (fréquentation)</span>
-          <span class="preuve-chip">📎 Stats Instagram — statistiques du réel</span>
+          <a class="preuve-chip" href="preuves/preuve%201%20ACC4.pdf" target="_blank">📎 Stats site Alliance Consulting (fréquentation)</a>
+          <a class="preuve-chip" href="preuves/preuve%202%20ACC4.pdf" target="_blank">📎 Stats Instagram — statistiques du réel</a>
         </div>
         <div class="ac-points">
           <div class="ac-point"><div class="ac-point-label">Actions réalisées</div><div class="ac-point-text">Dans le cadre du projet du cabinet de conseil, j'ai analysé les <strong>indicateurs de performance</strong> de deux supports de communication après leur mise en ligne. Pour le site web, j'ai exploité les données analytics de <strong>Vercel</strong>, qui était connecté à <strong>Telegram</strong>. Les résultats sont intéressants : macOS domine à 85% côté système d'exploitation des visiteurs, l'opérateur réseau Bouygues arrive en tête avec 22 visites, la croissance du trafic atteint un pic à 14 vues le 4 mai, et Lyon représente 50% des visiteurs, ce qui est cohérent avec notre cible locale. Pour notre compte <strong>Instagram</strong>, j'ai analysé les statistiques d'un réel publié : 693 vues au total, 337 comptes touchés, une durée de vue moyenne de 10 secondes, avec une répartition entre 17,6% de followers et 82,4% de <strong>non-followers</strong>. J'ai également étudié le profil de l'audience touchée : 59,9% avaient entre 18 et 24 ans et 35,8% entre 25 et 34 ans.</div></div>
           <div class="ac-point"><div class="ac-point-label">Ressources utilisées</div><div class="ac-point-text">Pour mener cette analyse, je me suis appuyée sur mes cours de <strong>Communication commerciale</strong> sur les indicateurs de performance des campagnes digitales. Pour les analytics du site, j'ai utilisé les outils intégrés à <strong>Vercel</strong>, et pour Instagram, les <strong>statistiques natives</strong> de la plateforme accessibles depuis le compte professionnel de la start-up.</div></div>
           <div class="ac-point"><div class="ac-point-label">Résultats obtenus</div><div class="ac-point-text">Cette analyse m'a permis de tirer des enseignements concrets sur l'efficacité de notre communication. Sur <strong>Instagram</strong>, le fait que 82,4% des personnes touchées soient des <strong>non-followers</strong> montre que notre contenu a réussi à dépasser notre communauté existante, c'est clairement un point positif. En revanche, la durée de vue moyenne de 10 secondes et l'absence de nouveaux abonnés indiquent que le contenu n'était pas suffisamment accrocheur pour générer de l'engagement durable. Pour le site, les données géographiques et les comportements de navigation m'ont permis de mieux comprendre qui consulte notre plateforme et comment.</div></div>
+          <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap">
+            <a href="alliance-consulting.html" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border:1.5px solid rgba(247,37,133,0.3);color:#F72585;border-radius:20px;font-size:12px;font-weight:600;text-decoration:none;background:rgba(247,37,133,0.05)">📊 Voir les stats de trafic</a>
+          </div>
           <div class="ac-point"><div class="ac-point-label">Si c'était à refaire</div><div class="ac-point-text">Si je devais recommencer, je mettrais en place un suivi des indicateurs dès le lancement de chaque support pour avoir des données comparatives sur la durée. Pour <strong>Instagram</strong>, je travaillerais davantage le contenu du réel pour augmenter la durée de vue et générer plus d'abonnements, peut-être avec un appel à l'action plus explicite, et j'ajouterais des hashtags ciblés pour améliorer la portée organique. Pour le site, je chercherais à augmenter le temps de session moyen en rendant le contenu plus engageant.</div></div>
         </div>
       </div>
@@ -764,7 +776,7 @@ strong { font-weight: 700; color: var(--dark); }
   <div class="video-wrap">
     <video controls preload="metadata" style="width:100%;max-height:520px;display:block"
            onerror="this.closest('.video-wrap').innerHTML='<div class=\'video-placeholder\'><p style=\'font-size:13px;color:#999\'>Vidéo disponible en local — pour la mettre en ligne, <strong>upload sur YouTube</strong> puis remplace cette balise par l\'iframe YouTube.</p></div>'">
-      <source src="sae.mp4" type="video/mp4">
+      <source src="preuves/preuve%203%20ACC1.mp4" type="video/mp4">
     </video>
   </div>
 </section>
