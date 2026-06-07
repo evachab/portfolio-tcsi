@@ -261,6 +261,8 @@ strong { font-weight: 700; color: var(--dark); }
   transform: scale(0.95);
   transition: transform 0.25s ease-out;
   cursor: default;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .lightbox-modal.active {
@@ -307,6 +309,8 @@ strong { font-weight: 700; color: var(--dark); }
 .ac-preuve-photos img {
   cursor: zoom-in;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
 }
 
 .ac-preuve-photos img:hover {
