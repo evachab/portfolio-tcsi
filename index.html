@@ -317,6 +317,58 @@ strong { font-weight: 700; color: var(--dark); }
   transform: scale(1.02);
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+
+/* ── PRINT & PDF STYLES ── */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt !important;
+    font-family: 'Inter', sans-serif !important;
+  }
+  nav, .pdf-btn, #lightbox-modal, .divider {
+    display: none !important;
+  }
+  .hero {
+    page-break-after: always;
+    padding: 1cm !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+  .hero-bg, .pinterest-grid {
+    display: none !important;
+  }
+  .ac-section {
+    page-break-before: always;
+  }
+  .ac-card {
+    page-break-inside: avoid;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    margin-bottom: 2rem !important;
+    padding: 1.5rem !important;
+  }
+  .ac-point-text strong {
+    color: black !important;
+  }
+  .preuve-chip {
+    border: 1px solid #999 !important;
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+  }
+  .ac-preuve-photos {
+    page-break-inside: avoid;
+  }
+  .ac-preuve-photos img {
+    max-height: 140px !important;
+    border: 1px solid #eee !important;
+  }
+  footer {
+    page-break-before: always;
+  }
+}
 </style>
 </head>
 <body>
@@ -331,6 +383,7 @@ strong { font-weight: 700; color: var(--dark); }
     <li><a href="#communiquer">Communiquer</a></li>
     <li><a href="#conclusion">Conclusion</a></li>
     <li><a href="alliance-consulting.html" style="background:linear-gradient(135deg,rgba(247,37,133,0.12),rgba(244,128,42,0.12));border:1.5px solid rgba(247,37,133,0.3)">🚀 Alliance Consulting</a></li>
+    <li><a href="javascript:window.print()" class="pdf-btn" style="background:rgba(247,37,133,0.06);border:1.5px dashed var(--rose);color:var(--rose);font-weight:600">📥 PDF</a></li>
   </ul>
 </nav>
 
@@ -451,7 +504,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC M.1</span>
-        <div><div class="ac-card-title">Analyser l'environnement d'une entreprise en repérant et appréciant les sources d'informations</div><div class="ac-prof">Mme Laurent / Marketing</div></div>
+        <div><div class="ac-card-title">Analyser l'environnement d'une entreprise en repérant et appréciant les sources d'informations</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -482,7 +535,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC M.2</span>
-        <div><div class="ac-card-title">Mettre en œuvre une étude de marché dans un environnement simple</div><div class="ac-prof">Mme Laurent / Marketing</div></div>
+        <div><div class="ac-card-title">Mettre en œuvre une étude de marché dans un environnement simple</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -513,7 +566,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC M.3</span>
-        <div><div class="ac-card-title">Choisir une cible et un positionnement en fonction de la segmentation du marché</div><div class="ac-prof">Mme Laurent / Marketing</div></div>
+        <div><div class="ac-card-title">Choisir une cible et un positionnement en fonction de la segmentation du marché</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -544,7 +597,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC M.4</span>
-        <div><div class="ac-card-title">Concevoir une offre cohérente et éthique en termes de produits, de prix, de distribution et de communication</div><div class="ac-prof">Mme Laurent / Marketing</div></div>
+        <div><div class="ac-card-title">Concevoir une offre cohérente et éthique en termes de produits, de prix, de distribution et de communication</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -571,7 +624,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC M.5</span>
-        <div><div class="ac-card-title">Réaliser un diagnostic avant la mise en place d'actions commerciales</div><div class="ac-prof">Mme Laurent / Marketing</div></div>
+        <div><div class="ac-card-title">Réaliser un diagnostic avant la mise en place d'actions commerciales</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -614,7 +667,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC V.1</span>
-        <div><div class="ac-card-title">Préparer un plan de découverte qui permette de profiler le client et découvrir ses besoins</div><div class="ac-prof">Mme Laurent / Vente-Négociation</div></div>
+        <div><div class="ac-card-title">Préparer un plan de découverte qui permette de profiler le client et découvrir ses besoins</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -641,7 +694,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC V.2</span>
-        <div><div class="ac-card-title">Concevoir un argumentaire de vente qui permette de proposer une solution adaptée aux besoins du client</div><div class="ac-prof">Mme Laurent / Vente-Négociation</div></div>
+        <div><div class="ac-card-title">Concevoir un argumentaire de vente qui permette de proposer une solution adaptée aux besoins du client</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -672,7 +725,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC V.3</span>
-        <div><div class="ac-card-title">Concevoir des OAV efficaces (Outils d'Aide à la Vente)</div><div class="ac-prof">Mme Laurent / Vente-Négociation</div></div>
+        <div><div class="ac-card-title">Concevoir des OAV efficaces (Outils d'Aide à la Vente)</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -699,7 +752,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC V.4</span>
-        <div><div class="ac-card-title">Évaluer la performance commerciale au moyen d'indicateurs</div><div class="ac-prof">Mme Laurent / Marketing · Stage Ortho-Primo</div></div>
+        <div><div class="ac-card-title">Évaluer la performance commerciale au moyen d'indicateurs</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -726,7 +779,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC V.5</span>
-        <div><div class="ac-card-title">Recourir aux techniques adaptées à la démarche de prospection</div><div class="ac-prof">Mme Selo / Prospection</div></div>
+        <div><div class="ac-card-title">Recourir aux techniques adaptées à la démarche de prospection</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -761,7 +814,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC V.6</span>
-        <div><div class="ac-card-title">Recourir aux codes d'expression spécifiques et professionnels</div><div class="ac-prof">Mme Laurent / Vente-Négociation · Mme Lapierre / PPP</div></div>
+        <div><div class="ac-card-title">Recourir aux codes d'expression spécifiques et professionnels</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -792,7 +845,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC V.7</span>
-        <div><div class="ac-card-title">Adapter l'offre à une demande client</div><div class="ac-prof">Mme Laurent / Vente-Négociation</div></div>
+        <div><div class="ac-card-title">Adapter l'offre à une demande client</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -835,7 +888,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC C.1</span>
-        <div><div class="ac-card-title">Identifier les cibles et objectifs de communication en tenant compte de la cohérence du mix</div><div class="ac-prof">M. Flamant / Communication</div></div>
+        <div><div class="ac-card-title">Identifier les cibles et objectifs de communication en tenant compte de la cohérence du mix</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -863,7 +916,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC C.2</span>
-        <div><div class="ac-card-title">Analyser de manière pertinente les moyens de communication commerciale (médias, hors médias, médias sociaux)</div><div class="ac-prof">Prof Culture Communication · Mme Selo / Communication</div></div>
+        <div><div class="ac-card-title">Analyser de manière pertinente les moyens de communication commerciale (médias, hors médias, médias sociaux)</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -898,7 +951,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC C.3</span>
-        <div><div class="ac-card-title">Élaborer des supports simples (ISA, affiches, dossier de sponsoring…)</div><div class="ac-prof">M. Flamant / Communication</div></div>
+        <div><div class="ac-card-title">Élaborer des supports simples (ISA, affiches, dossier de sponsoring…)</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
@@ -924,7 +977,7 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="ac-card">
       <div class="ac-card-header">
         <span class="ac-badge">AC C.4</span>
-        <div><div class="ac-card-title">Analyser les indicateurs post campagne (impact, efficacité)</div><div class="ac-prof">M. Flamant / Communication</div></div>
+        <div><div class="ac-card-title">Analyser les indicateurs post campagne (impact, efficacité)</div></div>
       </div>
       <div class="ac-card-body">
         <div class="ac-preuves">
