@@ -311,16 +311,6 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="contact-card"><div class="contact-icon icon-rose">📍</div><div class="contact-info"><span class="contact-label">Adresse</span><span class="contact-value">183 rue du clos Saint Mathieu, 69380 Lozanne</span></div></div>
   </div>
 
-  <div class="section-label" style="margin-top:2.5rem">Envoyer un message</div>
-  <form class="contact-form" id="contactForm" novalidate>
-    <div class="form-row">
-      <input type="text"  id="cf-nom"     name="nom"     placeholder="Ton prénom & nom"  required />
-      <input type="email" id="cf-email"   name="email"   placeholder="ton@email.com"      required />
-    </div>
-    <textarea id="cf-message" name="message" placeholder="Ton message…" required></textarea>
-    <div><button type="submit" class="btn-send" id="cf-btn">Envoyer ✉️</button></div>
-    <div class="form-msg" id="cf-msg"></div>
-  </form>
 </section>
 
 <div class="divider"></div>
@@ -832,45 +822,6 @@ strong { font-weight: 700; color: var(--dark); }
 </footer>
 
 <script>
-/* ── Contact form ── */
-document.getElementById('contactForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const btn = document.getElementById('cf-btn');
-  const msg = document.getElementById('cf-msg');
-  msg.className = 'form-msg';
-  btn.disabled = true;
-  btn.textContent = 'Envoi…';
-
-  const body = {
-    nom:     document.getElementById('cf-nom').value.trim(),
-    email:   document.getElementById('cf-email').value.trim(),
-    message: document.getElementById('cf-message').value.trim(),
-  };
-
-  try {
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(body),
-    });
-    const data = await res.json();
-    if (res.ok) {
-      msg.textContent = data.message;
-      msg.className = 'form-msg success';
-      e.target.reset();
-    } else {
-      msg.textContent = data.message ?? 'Une erreur est survenue.';
-      msg.className = 'form-msg error';
-    }
-  } catch {
-    msg.textContent = 'Impossible d\'envoyer. Vérifie ta connexion.';
-    msg.className = 'form-msg error';
-  } finally {
-    btn.disabled = false;
-    btn.textContent = 'Envoyer ✉️';
-  }
-});
-
 /* ── Compteur de visites ── */
 fetch('/api/views', { method: 'POST' }).catch(() => {});
 
