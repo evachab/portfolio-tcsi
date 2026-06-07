@@ -760,16 +760,6 @@ strong { font-weight: 700; color: var(--dark); }
   </div>
 </div>
 
-<div class="divider"></div>
-
-<!-- ==================== GITHUB REPOS ==================== -->
-<section id="github">
-  <div class="section-label">Code & Projets</div>
-  <h2 class="section-title">Mes projets GitHub</h2>
-  <div class="github-grid" id="githubGrid">
-    <div style="color:#999;font-size:13px;grid-column:1/-1">Chargement des projets…</div>
-  </div>
-</section>
 
 <div class="divider"></div>
 
@@ -825,27 +815,6 @@ strong { font-weight: 700; color: var(--dark); }
 /* ── Compteur de visites ── */
 fetch('/api/views', { method: 'POST' }).catch(() => {});
 
-/* ── Repos GitHub ── */
-(async () => {
-  const grid = document.getElementById('githubGrid');
-  try {
-    const res = await fetch('/api/github');
-    if (!res.ok) throw new Error();
-    const repos = await res.json();
-    if (!repos.length) { grid.innerHTML = '<p style="color:#999;font-size:13px">Aucun repo public pour l\'instant.</p>'; return; }
-    grid.innerHTML = repos.map(r => `
-      <a class="repo-card" href="${r.url}" target="_blank" rel="noopener">
-        <div class="repo-name">📁 ${r.name}</div>
-        ${r.description ? `<div class="repo-desc">${r.description}</div>` : ''}
-        <div class="repo-meta">
-          ${r.language ? `<span class="repo-lang">${r.language}</span>` : ''}
-          ${r.stars ? `<span>⭐ ${r.stars}</span>` : ''}
-        </div>
-      </a>`).join('');
-  } catch {
-    grid.innerHTML = '<p style="color:#999;font-size:13px">Projets non disponibles.</p>';
-  }
-})();
 </script>
 </body>
 </html>
