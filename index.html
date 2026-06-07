@@ -322,16 +322,17 @@ strong { font-weight: 700; color: var(--dark); }
 @media print {
   body {
     background: white !important;
-    color: black !important;
-    font-size: 12pt !important;
+    font-size: 11pt !important;
     font-family: 'Inter', sans-serif !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
   nav, .pdf-btn, #lightbox-modal, .divider {
     display: none !important;
   }
   .hero {
     page-break-after: always;
-    padding: 1cm !important;
+    padding: 1.5cm !important;
     height: auto !important;
     min-height: auto !important;
   }
@@ -343,27 +344,14 @@ strong { font-weight: 700; color: var(--dark); }
   }
   .ac-card {
     page-break-inside: avoid;
-    border: 1px solid #ddd !important;
-    box-shadow: none !important;
-    background: transparent !important;
     margin-bottom: 2rem !important;
     padding: 1.5rem !important;
-  }
-  .ac-point-text strong {
-    color: black !important;
-  }
-  .preuve-chip {
-    border: 1px solid #999 !important;
-    background: transparent !important;
-    color: black !important;
-    text-shadow: none !important;
   }
   .ac-preuve-photos {
     page-break-inside: avoid;
   }
   .ac-preuve-photos img {
     max-height: 140px !important;
-    border: 1px solid #eee !important;
   }
   footer {
     page-break-before: always;
