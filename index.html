@@ -233,6 +233,73 @@ strong { font-weight: 700; color: var(--dark); }
   margin-bottom: 0;
 }
 
+/* CONTAINER & ORAL NOTES */
+.intro-container {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-start;
+  margin: 2rem 0 3rem;
+}
+.intro-container .intro-text {
+  margin: 0;
+  flex: 1;
+  max-width: 760px;
+}
+.oral-notes {
+  width: 250px;
+  background: rgba(244, 128, 42, 0.04);
+  border: 1.5px dashed rgba(244, 128, 42, 0.25);
+  border-radius: 16px;
+  padding: 1.25rem;
+  font-family: 'DM Sans', sans-serif;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(244, 128, 42, 0.03);
+}
+.oral-notes-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.oral-notes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.oral-notes li {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.45;
+  position: relative;
+  padding-left: 14px;
+}
+.oral-notes li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-weight: bold;
+}
+
+@media (max-width: 992px) {
+  .intro-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .oral-notes {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
 /* Lightbox Modal */
 .lightbox-modal {
   display: none;
@@ -398,7 +465,7 @@ strong { font-weight: 700; color: var(--dark); }
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-  nav, .pdf-btn, #lightbox-modal, .divider {
+  nav, .pdf-btn, #lightbox-modal, .divider, .oral-notes {
     display: none !important;
   }
   .hero {
@@ -506,12 +573,25 @@ strong { font-weight: 700; color: var(--dark); }
     <div class="logo-box">📍 Gratte-Ciel, Villeurbanne</div>
   </div>
 
-  <div class="intro-text">
-    <p>Je m'appelle <strong>Eva Chabert</strong>, j'ai 19 ans et je suis étudiante en première année de <strong>BUT TCSI</strong> à l'<strong>IUT Lyon 1</strong>, dans le site Gratte-Ciel à Villeurbanne. C'est lors des portes ouvertes de l'IUT que j'ai découvert cette formation. Je partais au départ sur la formation TC mais après réflexion je ne regrette en rien ce choix. La double compétence technique et commerciale du BUT TCSI me correspond parfaitement : je suis convaincue que l'industrie est l'avenir, qu'elle se développe et qu'elle a besoin de profils capables de faire le lien entre le terrain technique et le monde commercial. Et puis, je ne vais pas me mentir, être une femme dans ce secteur, c'est aussi un vrai atout. Les femmes sont encore peu nombreuses dans l'industrie, et c'est précisément ce qui me permet de me démarquer.</p>
-    <p>Avant d'entrer en BUT TCSI, j'ai obtenu mon baccalauréat général avec les spécialités <strong>Sciences Économiques et Sociales</strong> et <strong>Langues Littératures et Cultures Étrangères et Régionales</strong> au lycée Germaine Tillon de Sain-Bel. En parallèle de mes études, j'ai toujours été active professionnellement : hôtesse ferroviaire chez Trenitalia durant les vacances d’été, cours de français et d'anglais, baby-sitting, et stage ouvrier d'un mois chez Ortho-Primo. Ces expériences m'ont appris la rigueur, l'adaptabilité et le sens du service, des qualités que je mobilise chaque jour dans ma formation.</p>
-    <p>Dans la vie, j'aime bouger et m'entourer. La salle de sport, le shopping, les sorties avec ma famille et mes amis font partie de mon quotidien.</p>
-    <p>L'année prochaine, j'aimerais vivement décrocher une <strong>alternance</strong> dans un secteur industriel à dimension internationale, en lien direct avec ma formation. Le poste qui m'attire le plus est celui de <strong>Business Developer</strong> ou alors <strong>technico-commerciale</strong>, un rôle où je pourrais allier ma double compétence technique et commerciale pour développer un portefeuille clients et négocier des contrats. À plus long terme, j'envisage de poursuivre en Master Vente, Négociation ou Commerce International, ou d'intégrer une école de commerce pour aller encore plus loin.</p>
-    <p>Pour réussir cette prochaine étape, mon plan d'action est clair : passer le <strong>TOEIC</strong> pour valoriser mon niveau d'anglais, continuer à m'investir pleinement dans mes cours comme je l'ai fait cette année, et multiplier les expériences terrain pour construire un profil solide et attractif pour les recruteurs.</p>
+  <div class="intro-container">
+    <div class="intro-text">
+      <p>Je m'appelle <strong>Eva Chabert</strong>, j'ai 19 ans et je suis étudiante en première année de <strong>BUT TCSI</strong> à l'<strong>IUT Lyon 1</strong>, dans le site Gratte-Ciel à Villeurbanne. C'est lors des portes ouvertes de l'IUT que j'ai découvert cette formation. Je partais au départ sur la formation TC mais après réflexion je ne regrette en rien ce choix. La double compétence technique et commerciale du BUT TCSI me correspond parfaitement : je suis convaincue que l'industrie est l'avenir, qu'elle se développe et qu'elle a besoin de profils capables de faire le lien entre le terrain technique et le monde commercial. Et puis, je ne vais pas me mentir, être une femme dans ce secteur, c'est aussi un vrai atout. Les femmes sont encore peu nombreuses dans l'industrie, et c'est précisément ce qui me permet de me démarquer.</p>
+      <p>Avant d'entrer en BUT TCSI, j'ai obtenu mon baccalauréat général avec les spécialités <strong>Sciences Économiques et Sociales</strong> et <strong>Langues Littératures et Cultures Étrangères et Régionales</strong> au lycée Germaine Tillon de Sain-Bel. En parallèle de mes études, j'ai toujours été active professionnellement : hôtesse ferroviaire chez Trenitalia durant les vacances d’été, cours de français et d'anglais, baby-sitting, et stage ouvrier d'un mois chez Ortho-Primo. Ces expériences m'ont appris la rigueur, l'adaptabilité et le sens du service, des qualités que je mobilise chaque jour dans ma formation.</p>
+      <p>Dans la vie, j'aime bouger et m'entourer. La salle de sport, le shopping, les sorties avec ma famille et mes amis font partie de mon quotidien.</p>
+      <p>L'année prochaine, j'aimerais vivement décrocher une <strong>alternance</strong> dans un secteur industriel à dimension internationale, en lien direct avec ma formation. Le poste qui m'attire le plus est celui de <strong>Business Developer</strong> ou alors <strong>technico-commerciale</strong>, un rôle où je pourrais allier ma double compétence technique et commerciale pour développer un portefeuille clients et négocier des contrats. À plus long terme, j'envisage de poursuivre en Master Vente, Négociation ou Commerce International, ou d'intégrer une école de commerce pour aller encore plus loin.</p>
+      <p>Pour réussir cette prochaine étape, mon plan d'action est clair : passer le <strong>TOEIC</strong> pour valoriser mon niveau d'anglais, continuer à m'investir pleinement dans mes cours comme je l'ai fait cette année, et multiplier les expériences terrain pour construire un profil solide et attractif pour les recruteurs.</p>
+    </div>
+    <div class="oral-notes">
+      <div class="oral-notes-title">📌 Notes Oral</div>
+      <ul>
+        <li>Qui je suis et où</li>
+        <li>Découverte</li>
+        <li>Ce que j'ai fait avant</li>
+        <li>En parallèle de mes études</li>
+        <li>Ce que j'aime faire dans la vie</li>
+        <li>Objectif pour l'année prochaine : alternance et TOEIC</li>
+      </ul>
+    </div>
   </div>
 
   <div class="section-label">Me contacter</div>
